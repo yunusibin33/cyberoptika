@@ -249,7 +249,7 @@ window.onload = function() {
   }
   
   var stokListesi = []; // Ürünlerin stok listesi
-  
+
   document.getElementById("urunEkleForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Formun otomatik olarak gönderilmesini engeller
   

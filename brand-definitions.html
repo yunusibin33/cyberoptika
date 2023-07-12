@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+    .edit-btn,
+    .delete-btn {
+      cursor: pointer;
+    }
       .modal {
         display: none;
         position: fixed;
@@ -47,10 +51,6 @@
       .edit-btn,
       .delete-btn {
         cursor: pointer;
-      }
-  
-      .total-stok {
-        font-weight: bold;
       }
     </style>
     <!-- Favicon -->
@@ -117,36 +117,41 @@
         </div>
         <div class="content">
             <div class="container-fluid pt-4 px-4">
-              <button id="myBtn" class="btn btn-primary">Ürün Ekle</button>
+              <button id="myBtn" class="btn btn-primary">Marka Tanımla</button>
 
               <div id="myModal" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
-                  <h3>Ürün Bilgileri</h3>
+                  <h3>Marka Tanımlama Formu</h3>
                   <form>
                     <div class="form-group">
-                      <label for="barkod">Barkod:</label>
-                      <input type="text" id="barkod" class="input-type-style" required>
+                      <label for="markaKodu">Marka Kodu:</label>
+                      <input type="text" id="markaKodu" class="input-type-style" required>
                     </div>
             
                     <div class="form-group">
-                      <label for="urunAdi">Ürün Adı:</label>
-                      <input type="text" id="urunAdi" class="input-type-style" required>
+                      <label for="markaAdi">Marka Adı:</label>
+                      <input type="text" id="markaAdi" class="input-type-style" required>
                     </div>
             
                     <div class="form-group">
-                      <label for="gelenFiyat">Geliş Fiyatı:</label>
-                      <input type="text" id="gelenFiyat" class="input-type-style" required>
+                      <label for="ulke">Ülke:</label>
+                      <input type="text" id="ulke" class="input-type-style" required>
                     </div>
             
                     <div class="form-group">
-                      <label for="satisFiyat">Satış Fiyatı:</label>
-                      <input type="text" id="satisFiyat" class="input-type-style" required>
+                      <label for="alisPara">Alış Para:</label>
+                      <input type="text" id="alisPara" class="input-type-style" required>
                     </div>
-                    
+            
                     <div class="form-group">
-                      <label for="stokAdedi">Stok Adedi:</label>
-                      <input type="number" id="stokAdedi" class="input-type-style" required>
+                      <label for="satisPara">Satış Para:</label>
+                      <input type="text" id="satisPara" class="input-type-style" required>
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="iskontoOrani">İskonto Oranı:</label>
+                      <input type="text" id="iskontoOrani" class="input-type-style" required>
                     </div>
             
                     <button type="button" id="submitBtn" class="btn btn-primary">Kaydet</button>
@@ -154,26 +159,20 @@
                 </div>
               </div>
             
-              <table id="stokTable" class="table">
+              <table id="markaTable" class="table">
                 <thead>
                   <tr>
-                    <th>Barkod</th>
-                    <th>Ürün Adı</th>
-                    <th>Geliş Fiyatı</th>
-                    <th>Satış Fiyatı</th>
-                    <th>Stok Adedi</th>
+                    <th>Marka Kodu</th>
+                    <th>Marka Adı</th>
+                    <th>Ülke</th>
+                    <th>Alış Para</th>
+                    <th>Satış Para</th>
+                    <th>İskonto Oranı</th>
                     <th>İşlemler</th>
                   </tr>
                 </thead>
                 <tbody>
                 </tbody>
-                <tfoot>
-                  <tr>
-                    <th colspan="4">Toplam Stok Adedi:</th>
-                    <th class="total-stok"></th>
-                    <th></th>
-                  </tr>
-                </tfoot>
               </table>
             </div>
             <!-- Footer End -->
@@ -186,122 +185,109 @@
     </div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var modal = document.getElementById('myModal');
-      var btn = document.getElementById('myBtn');
-      var span = document.getElementsByClassName('close')[0];
-      var submitBtn = document.getElementById('submitBtn');
-      var editRow = null; // Düzenleme yapılacak satırın referansını tutar
-
-      btn.onclick = function() {
-        modal.style.display = 'block';
-      }
-
-      span.onclick = function() {
-        modal.style.display = 'none';
-        resetForm(); // Formu sıfırla
-      }
-
-      submitBtn.onclick = function() {
-        var barkod = document.getElementById('barkod').value;
-        var urunAdi = document.getElementById('urunAdi').value;
-        var gelenFiyat = document.getElementById('gelenFiyat').value;
-        var satisFiyat = document.getElementById('satisFiyat').value;
-        var stokAdedi = document.getElementById('stokAdedi').value;
-
-        if (editRow) {
-          // Düzenleme modunda ise, satırı güncelle
-          editRow.cells[0].innerHTML = barkod;
-          editRow.cells[1].innerHTML = urunAdi;
-          editRow.cells[2].innerHTML = gelenFiyat;
-          editRow.cells[3].innerHTML = satisFiyat;
-          editRow.cells[4].innerHTML = stokAdedi;
-        } else {
-          // Yeni ürün ekleniyor
-          var table = document.getElementById('stokTable');
-          var newRow = table.insertRow(table.rows.length - 1); // Son sıradaki toplam satırını önce ekle
-          var cell1 = newRow.insertCell(0);
-          var cell2 = newRow.insertCell(1);
-          var cell3 = newRow.insertCell(2);
-          var cell4 = newRow.insertCell(3);
-          var cell5 = newRow.insertCell(4);
-          var cell6 = newRow.insertCell(5);
-          cell1.innerHTML = barkod;
-          cell2.innerHTML = urunAdi;
-          cell3.innerHTML = gelenFiyat;
-          cell4.innerHTML = satisFiyat;
-          cell5.innerHTML = stokAdedi;
-          cell6.innerHTML = '<i class="fas fa-edit edit-btn"></i> <i class="fas fa-trash-alt delete-btn"></i>';
-        }
-
-        modal.style.display = 'none';
-        resetForm(); // Formu sıfırla
-        calculateTotalStok();
-      }
-
-      // Düzenleme işlemi için düzenle butonlarını dinle
-      document.addEventListener('click', function(e) {
-        if (e.target && e.target.classList.contains('edit-btn')) {
-          var row = e.target.parentNode.parentNode;
-          var cells = row.getElementsByTagName('td');
-          var barkod = cells[0].innerHTML;
-          var urunAdi = cells[1].innerHTML;
-          var gelenFiyat = cells[2].innerHTML;
-          var satisFiyat = cells[3].innerHTML;
-          var stokAdedi = cells[4].innerHTML;
-
-          // Formu doldur
-          document.getElementById('barkod').value = barkod;
-          document.getElementById('urunAdi').value = urunAdi;
-          document.getElementById('gelenFiyat').value = gelenFiyat;
-          document.getElementById('satisFiyat').value = satisFiyat;
-          document.getElementById('stokAdedi').value = stokAdedi;
-
-          editRow = row; // Düzenleme yapılacak satırın referansını kaydet
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById('myBtn');
+        var span = document.getElementsByClassName('close')[0];
+        var submitBtn = document.getElementById('submitBtn');
+        var editRow = null; // Düzenleme yapılacak satırın referansını tutar
+  
+        btn.onclick = function() {
           modal.style.display = 'block';
         }
-      });
-
-      // Silme işlemi için sil butonlarını dinle
-      document.addEventListener('click', function(e) {
-        if (e.target && e.target.classList.contains('delete-btn')) {
-          var row = e.target.parentNode.parentNode;
-          row.parentNode.removeChild(row);
-          calculateTotalStok();
+  
+        span.onclick = function() {
+          modal.style.display = 'none';
+          resetForm(); // Formu sıfırla
         }
-      });
-
-      // Formu sıfırlamak için işlev
-      function resetForm() {
-        editRow = null;
-        document.getElementById('barkod').value = '';
-        document.getElementById('urunAdi').value = '';
-        document.getElementById('gelenFiyat').value = '';
-        document.getElementById('satisFiyat').value = '';
-        document.getElementById('stokAdedi').value = '';
-      }
-
-      // Toplam stok adedini hesapla ve tabloya ekle
-      function calculateTotalStok() {
-        var table = document.getElementById('stokTable');
-        var totalStok = 0;
-
-        for (var i = 1; i < table.rows.length - 1; i++) { // Toplam satırı hariç, başlık ve son satırı sayma
-          var row = table.rows[i];
-          var stokAdedi = parseInt(row.cells[4].innerHTML);
-          if (!isNaN(stokAdedi)) {
-            totalStok += stokAdedi;
+  
+        submitBtn.onclick = function() {
+          var markaKodu = document.getElementById('markaKodu').value;
+          var markaAdi = document.getElementById('markaAdi').value;
+          var ulke = document.getElementById('ulke').value;
+          var alisPara = document.getElementById('alisPara').value;
+          var satisPara = document.getElementById('satisPara').value;
+          var iskontoOrani = document.getElementById('iskontoOrani').value;
+  
+          if (editRow) {
+            // Düzenleme modunda ise, satırı güncelle
+            editRow.cells[0].innerHTML = markaKodu;
+            editRow.cells[1].innerHTML = markaAdi;
+            editRow.cells[2].innerHTML = ulke;
+            editRow.cells[3].innerHTML = alisPara;
+            editRow.cells[4].innerHTML = satisPara;
+            editRow.cells[5].innerHTML = iskontoOrani;
+          } else {
+            // Yeni marka ekleniyor
+            var table = document.getElementById('markaTable');
+            var newRow = table.insertRow(table.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
+            var cell6 = newRow.insertCell(5);
+            var cell7 = newRow.insertCell(6);
+            cell1.innerHTML = markaKodu;
+            cell2.innerHTML = markaAdi;
+            cell3.innerHTML = ulke;
+            cell4.innerHTML = alisPara;
+            cell5.innerHTML = satisPara;
+            cell6.innerHTML = iskontoOrani;
+            cell7.innerHTML = '<i class="fas fa-edit edit-btn"></i> <i class="fas fa-trash-alt delete-btn"></i>';
           }
+  
+          modal.style.display = 'none';
+          resetForm(); // Formu sıfırla
         }
-
-        var totalRow = table.rows[table.rows.length - 1];
-        var totalCell = totalRow.cells[4];
-        totalCell.innerHTML = '<span class="total-stok">' + totalStok + '</span>';
-      }
-    });
-  </script>
+  
+        // Düzenleme işlemi için düzenle butonlarını dinleyin
+        document.addEventListener('click', function(e) {
+          if (e.target && e.target.classList.contains('edit-btn')) {
+            var row = e.target.parentNode.parentNode;
+            var cells = row.getElementsByTagName('td');
+            var markaKodu = cells[0].innerHTML;
+            var markaAdi = cells[1].innerHTML;
+            var ulke = cells[2].innerHTML;
+            var alisPara = cells[3].innerHTML;
+            var satisPara = cells[4].innerHTML;
+            var iskontoOrani = cells[5].innerHTML;
+  
+            // Formu doldur
+            document.getElementById('markaKodu').value = markaKodu;
+            document.getElementById('markaAdi').value = markaAdi;
+            document.getElementById('ulke').value = ulke;
+            document.getElementById('alisPara').value = alisPara;
+            document.getElementById('satisPara').value = satisPara;
+            document.getElementById('iskontoOrani').value = iskontoOrani;
+  
+            editRow = row; // Düzenleme yapılacak satırın referansını kaydet
+  
+            modal.style.display = 'block';
+          }
+        });
+  
+        // Silme işlemi için sil butonlarını dinleyin
+        document.addEventListener('click', function(e) {
+          if (e.target && e.target.classList.contains('delete-btn')) {
+            var row = e.target.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+          }
+        });
+  
+        // Formu sıfırlamak için işlev
+        function resetForm() {
+          editRow = null;
+          document.getElementById('markaKodu').value = '';
+          document.getElementById('markaAdi').value = '';
+          document.getElementById('ulke').value = '';
+          document.getElementById('alisPara').value = '';
+          document.getElementById('satisPara').value = '';
+          document.getElementById('iskontoOrani').value = '';
+        }
+      });
+    </script>
     <!-- JavaScript Libraries -->
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
