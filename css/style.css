@@ -319,6 +319,44 @@ body {
   #name-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
   }
+
+#firmaTable {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+#firmaTable th, #firmaTable td {
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+  }
+
+#firmaTable th {
+    background-color: #f2f2f2 !important;
+  }
+
+#firmaTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9 !important;
+  }
+
+  #markaTable {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+#markaTable th, #firmaTable td {
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+  }
+
+#markaTable th {
+    background-color: #f2f2f2 !important;
+  }
+
+#markaTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9 !important;
+  }
+
+
   
 .modal {
   display: none;
@@ -334,7 +372,7 @@ body {
 
 .modal-content {
   background-color: #fff;
-  margin: 10% auto;
+  margin: 3% 36%;
   padding: 20px;
   width: 80%;
   max-width: 600px;
