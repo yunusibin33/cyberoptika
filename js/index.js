@@ -1,3 +1,4 @@
+  
   // Kullanıcı adına göre tabloda arama yapma
   function searchByName() {
     var input, filter, table, tr, td, i, txtValue;
@@ -90,12 +91,14 @@ window.onload = function() {
       document.getElementById('details-input').value = '';
     }
   
+    
     // Kullanıcıları tabloya ekleme işlevi
     function renderUsers() {
       const tableBody = document.querySelector('#name-table tbody');
       tableBody.innerHTML = '';
   
       users.forEach((user, index) => {
+        
         
         const newRow = document.createElement('tr');
   
@@ -128,16 +131,38 @@ window.onload = function() {
   
         const actionsCell = document.createElement('td');
         const editButton = document.createElement('button');
-        editButton.textContent = 'Düzenle';
+        editButton.innerHTML = '<i class="fas fa-edit"></i>';
+        editButton.setAttribute('title', 'Düzenle');
         editButton.addEventListener('click', function() {
           openEditModal(user);
         });
+        
+        
+        
   
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Sil';
+        deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        deleteButton.setAttribute('title', 'Sil');
         deleteButton.addEventListener('click', function() {
           deleteUser(index);
         });
+        
+        
+
+        const detailsButton = document.createElement('button');
+        detailsButton.innerHTML = '<i class="fas fa-info-circle"></i>';
+        detailsButton.setAttribute('title', 'Detay');
+        detailsButton.addEventListener('click', function() {
+          showUserSales(user);
+          openModal();
+        });
+        
+        
+        
+    
+        actionsCell.appendChild(editButton);
+        actionsCell.appendChild(deleteButton);
+        actionsCell.appendChild(detailsButton);
   
         actionsCell.appendChild(editButton);
         actionsCell.appendChild(deleteButton);
@@ -212,6 +237,24 @@ window.onload = function() {
       renderUsers();
       closeModal();
     }
+    
+    function showUserDetails(user) {
+      // Kullanıcının detaylarını görüntülemek için kullanmak istediğiniz alanları seçin
+      var date = user.date;
+      var frame = user.frame;
+      var glass = user.glass;
+      var details = user.details;
+    
+      // Detayları kullanarak istediğiniz işlemleri gerçekleştirin
+      console.log("Satış Tarihi: " + date);
+      console.log("Çerçeve: " + frame);
+      console.log("Cam: " + glass);
+      console.log("Satış Detayları: " + details);
+    
+      // veya bir modal kullanarak detayları gösterin
+      // Detayları modal içerisinde kullanıcıya göstermek için gerekli işlemleri gerçekleştirin
+    }
+    
   
     // Kullanıcıyı silme işlevi
     function deleteUser(index) {
@@ -312,4 +355,16 @@ window.onload = function() {
       alert("Bu ürün stokta kalmamıştır.");
     }
   }
-  
+// Get the current date
+var currentDate = new Date().toISOString().split('T')[0];
+
+// Create a new input element
+var newInput = document.createElement('input');
+newInput.setAttribute('type', 'date');
+newInput.setAttribute('class', 'input-type-style');
+newInput.setAttribute('id', 'new-date-input');
+newInput.setAttribute('value', currentDate);
+
+// Replace the original input with the new one
+var originalInput = document.getElementById('date-input');
+originalInput.parentNode.replaceChild(newInput, originalInput);

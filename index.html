@@ -67,18 +67,23 @@
                             class="fa fa-tachometer-alt me-2"></i>Kullanıcılar</a>
                     <a href="product-stock.html" class="nav-item nav-link active mt-3"><i
                             class="fa fa-tachometer-alt me-2"></i>Ürün Stoğu</a>
+                    <a href="https://optik.sgk.gov.tr/Optik_Firma_Web/login.jsp" class="nav-item nav-link active mt-3"><i
+                            class="fa fa-tachometer-alt me-2"></i>Medula Giriş</a>
                 </div>
             </nav>
         </div>
         <div class="content">
-            <div class="container-fluid pt-4 px-4">
-                <div class=" rounded-top p-4">
+            <div class="container-fluid pt-3 px-4">
+                <div class=" rounded-top pl-4">
                     <div class="container-xl">
-                        <h1>Müşteri Geçmişi</h1>
                         <div class="d-flex justify-content-between mb-3">
-                            <div><input class="search__input" type="text" id="search-input" placeholder="İsim Arayın">
-                            </div>
+                            <div class="search">
+                                <span class="search__icon"><i class="fas fa-search"></i></span>
+                                <input class="search__input" type="text" id="search-input" placeholder="İsim Arayın">
+                              </div>
+                              
                             <div> <button class="user-add-buton m-0" id="add-button">Kullanıcı Ekle</button></div>
+
                         </div>
 
                         <!-- Modal -->
@@ -117,6 +122,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="container-xl">
                         <table id="name-table">
                             <thead>
