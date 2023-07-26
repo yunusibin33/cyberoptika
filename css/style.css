@@ -433,56 +433,38 @@ td button {
 }
 
 .search {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #aec7ff;
-    padding: 8px;
+    position: relative;
+  }
+  
+  .search__icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #333;
+  }
+  
+  .search__input {
+    padding: 8px 30px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
     font-size: 14px;
-    border-radius: 6px;
-}
-
-.search__icon {
-    margin-right: 8px;
-    color: #000000;
-}
-
-.search__container {
-    padding-top: 64px;
-}
-
-.search__title {
-    font-size: 22px;
-    font-weight: 900;
-    text-align: center;
-    color: #ff8b88;
-}
-
-.search__input {
-    border: none !important;
-    padding: 8px 17px;
-    background-color: #aec7ff;
-    transition: transform 250ms ease-in-out;
-    font-size: 14px;
-    line-height: 18px;
-    color: #000000;
-    transition: all 250ms ease-in-out;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    border-radius: 6px;
-}
-
-.search__button {
-    border: none;
-    background: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-.search__button i {
-    color: #000000;
-    font-size: 14px;
-}
+    width: 200px;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Inputa odaklandığında ve üzerine gelindiğinde border rengini değiştirme */
+  .search__input:focus,
+  .search__input:hover {
+    border-color: #2ecc71;
+  }
+  
+  /* İnput alanının boyutunu ayarlamak için */
+  @media (max-width: 480px) {
+    .search__input {
+      width: 100%;
+    }
+  }
 
 .credits__container {
     margin-top: 24px;
@@ -505,19 +487,22 @@ td button {
     color: rgb(191, 137, 135);
 }
 
-.user-add-buton {
-    border: none !important;
-    padding: 16px 37px;
-    background-color: #aec7ff;
-    transition: transform 250ms ease-in-out;
-    font-size: 12px;
-    line-height: 18px;
-    color: #3a3838;
-    transition: all 250ms ease-in-out;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    border-radius: 6px;
-}
+/* Yeni düzenleme */
+.user-add-button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover durumunda butonun arka plan rengini değiştirme */
+  .user-add-button:hover {
+    background-color: #27ae60;
+  }
 
 
 .input-type-style {
