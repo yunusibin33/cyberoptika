@@ -32,6 +32,44 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <style>
+    .searchmodal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Modal content */
+    .searchmodal-content {
+        background-color: #fff;
+    margin: 4% 25%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 71%;
+    }
+
+    /* Close button */
+    .searchmodal-content .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .searchmodal-content .close:hover,
+    .searchmodal-content .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<style>
     .user-info {
         position: relative;
         left: 1%;
@@ -145,7 +183,37 @@
                 </div>
             </nav>
         </div>
+
         <div class="content">
+            <div id="searchModal" class="searchmodal">
+                <div class="searchmodal-content">
+                    <span class="close">&times;</span>
+                    <h5 class="text-dark text-center pb-5">Kullanıcı Tanımlama Formu</h5>
+                    <!-- Your search form here -->
+                    <form>
+                        <!-- Form fields here --> <input type="text" id="searchInput" class="input-type-style" placeholder="Kullanıcı adı veya diğer başlıklarla ara...">
+                    </form>
+                    <!-- Your table content here -->
+                    <table id="searchTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>İsim</th>
+                                <th>Soyisim</th>
+                                <th>Telefon Numarası</th>
+                                <th>Referans</th>
+                                <th>Tarih</th>
+                                <th>Cam</th>
+                                <th>Çerçeve</th>
+                                <th>Fiyat</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be added dynamically here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="user-info d-flex justify-content-end">
                 <div class="dropdown">
                     <div class="user-info">
@@ -157,85 +225,105 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid pt-3 px-5 mt-3">
-                <div class=" rounded-top pl-4">
-                    <div class="container-xl">
-                        <div class="d-flex justify-content-between mb-3">
-                            <div class="search">
-                                <span class="search__icon"><i class="fas fa-search"></i></span>
-                                <input class="search__input" type="text" id="search-input" placeholder="İsim Arayın">
-                            </div>                              
-                            <div>
-                                <!-- Open Modal Button -->
-                                <button id="open-modal-button" class="user-add-button m-0">Kullanıcı Ekle</button>
-                            </div>
+            <div class="ps-4 ms-1">
+                <div class="container-fluid pl-4">
+                    <div class="pl-4">
+                        <div class="d-flex justify-content-between">
+                         <!-- Add the search button and input field inside the <div class="pb-4"> section -->
+<div class="pb-4">
+    <div class="search-btn-container">
+        <button id="searchBtn" class="modal-butons">
+            <i class="fas fa-search"></i> Kullanıcı Ara
+        </button>
+    </div>
+</div>
+
+
+                            <!-- Add the "Kullanıcı Tanımla" button inside the <div class="pb-4"> section -->
+<div class="pb-4">
+    <div class="user-add-button-container">
+        <button id="myBtn" class="user-add-button">
+            <i class="fas fa-plus"></i> Kullanıcı Tanımla
+        </button>
+    </div>
+</div>
+
                         </div>
-                        <!-- Modal -->
-                        <div id="modal" class="modal">
+                        <div id="myModal" class="modal">
                             <div class="modal-content">
-                                <div class="d-flex justify-content-end">
-                                    <span class="close">&times;</span>
-                                </div>
-                                <h2 class="users-title">Kullanıcı Ekle</h2>
-                                <div class="d-flex justify-content-center mb-4">
-                                    <div class="col-md-5"> <input type="text" class="input-type-style" id="name-input"
-                                            placeholder="İsim"></div>
-                                    <div class="col-md-5 ml-2"> <input type="text" class="input-type-style"
-                                            id="surname-input" placeholder="Soyisim"></div>
-                                </div>
-                                <div class="d-flex justify-content-center mb-4">
-                                    <div class="col-md-5"> <input type="text" class="input-type-style" id="phone-input"
-                                            placeholder="Telefon Numarası"></div>
-                                    <div class="col-md-5 ml-2"> <input type="text" class="input-type-style"
-                                            id="reference-input" placeholder="Referans"></div>
-                                </div>
-                                <div class="d-flex justify-content-center mb-4">
-                                    <div class="col-md-5"> <input type="date" class="input-type-style" id="date-input">
-                                    </div>
-                                    <div class="col-md-5 ml-2"> <input type="text" class="input-type-style"
-                                            id="frame-input" placeholder="Çerçeve"></div>
-                                </div>
-                                <div class="d-flex justify-content-center mb-4">
-                                    <div class="col-md-5"> <input type="text" class="input-type-style" id="glass-input"
-                                            placeholder="Cam"></div>
-                                    <div class="col-md-5 ml-2"> <input type="text" class="input-type-style"
-                                            id="details-input" placeholder="Fiyat"></div>
-                                </div>
-                                <div class="col-md-12 d-flex justify-content-center">
-                                    <button id="save-button" class="modal-buttons">Kaydet</button>
-                                  </div>
-                                  
+                                <span class="close">&times;</span>
+                                <h5 class="text-dark text-center pb-5">Kullanıcı Tanımlama Formu</h3>
+                                    <form>
+                                        <div class="d-flex">
+                                            <div class="form-group col-md-6">
+                                                <label for="firmaKodu">İsim:</label>
+                                                <input type="text" id="firmaKodu" class="input-type-style" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="firmaAdi">Soyisim:</label>
+                                                <input type="text" id="firmaAdi" class="input-type-style" required>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="form-group col-md-6">
+                                                <label for="ulke">Telefon Numarası:</label>
+                                                <input type="text" id="ulke" class="input-type-style" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="alisPara">Referans:</label>
+                                                <input type="text" id="alisPara" class="input-type-style" required>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="form-group col-md-6">
+                                                <label for="satisPara">Tarih:</label>
+                                                <input type="text" id="satisPara" class="input-type-style" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="iskontoOrani">Cam:</label>
+                                                <input type="text" id="iskontoOrani" class="input-type-style" required>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="form-group col-md-6">
+                                                <label for="satis">Çerçeve:</label>
+                                                <input type="text" id="satis" class="input-type-style" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="fiyat">Fiyat:</label>
+                                                <input type="text" id="fiyat" class="input-type-style" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 d-flex justify-content-center pt-4"> <button
+                                                id="submitBtn" class="modal-butons">Kaydet</button></div>
+                                    </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="container-xl">
-                        <table id="name-table">
+
+                        <table id="firmaTable" class="table-responsive">
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>İsim</th>
                                     <th>Soyisim</th>
                                     <th>Telefon Numarası</th>
                                     <th>Referans</th>
                                     <th>Tarih</th>
-                                    <th>Çerçeve</th>
                                     <th>Cam</th>
+                                    <th>Çerçeve</th>
                                     <th>Fiyat</th>
                                     <th>İşlemler</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Burada JavaScript ile dinamik olarak oluşturulacak satırlar yer alacak -->
                             </tbody>
                         </table>
                     </div>
+                    <!-- Footer End -->
                 </div>
             </div>
-            <!-- Footer End -->
         </div>
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-    
     <!-- JavaScript Libraries -->
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
