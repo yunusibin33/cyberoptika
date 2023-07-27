@@ -118,7 +118,6 @@
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
                     <h3 class=""><i class="fa fa-glasses me-2"></i>Nazar Optik</h3>
                 </a>
-
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
                         <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
@@ -154,10 +153,9 @@
                         <h6 class="ps-2">Yunus İbin</h6>
                     </div>
                     <div class="dropdown-content">
-                        <a href="#">Çıkış Yap <i class="fas fa-sign-out-alt logout-icon ps-2"></i></a>
+                        <a href="signin.html">Çıkış Yap <i class="fas fa-sign-out-alt logout-icon ps-2"></i></a>
                     </div>
                 </div>
-
             </div>
             <div class="container-fluid pt-3 px-5 mt-3">
                 <div class=" rounded-top pl-4">
@@ -166,14 +164,12 @@
                             <div class="search">
                                 <span class="search__icon"><i class="fas fa-search"></i></span>
                                 <input class="search__input" type="text" id="search-input" placeholder="İsim Arayın">
-                              </div>                              
+                            </div>                              
                             <div>
-                                <button class="user-add-button m-0" id="add-button">Kullanıcı Ekle</button>
+                                <!-- Open Modal Button -->
+                                <button id="open-modal-button" class="user-add-button m-0">Kullanıcı Ekle</button>
                             </div>
-
-
                         </div>
-
                         <!-- Modal -->
                         <div id="modal" class="modal">
                             <div class="modal-content">
@@ -205,12 +201,13 @@
                                     <div class="col-md-5 ml-2"> <input type="text" class="input-type-style"
                                             id="details-input" placeholder="Fiyat"></div>
                                 </div>
-                                <div class="col-md-12 d-flex justify-content-center"> <button id="save-button"
-                                        class="modal-butons">Kaydet</button></div>
+                                <div class="col-md-12 d-flex justify-content-center">
+                                    <button id="save-button" class="modal-buttons">Kaydet</button>
+                                  </div>
+                                  
                             </div>
                         </div>
                     </div>
-
                     <div class="container-xl">
                         <table id="name-table">
                             <thead>
@@ -236,26 +233,13 @@
             </div>
             <!-- Footer End -->
         </div>
-        <!-- Content End -->
-
-
-        <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
+    
     <!-- JavaScript Libraries -->
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
 
