@@ -47,11 +47,11 @@
     /* Modal content */
     .searchmodal-content {
         background-color: #fff;
-    margin: 4% 25%;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 100%;
-    max-width: 71%;
+        margin: 4% 25%;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 100%;
+        max-width: 71%;
     }
 
     /* Close button */
@@ -191,7 +191,8 @@
                     <h5 class="text-dark text-center pb-5">Kullanıcı Tanımlama Formu</h5>
                     <!-- Your search form here -->
                     <form>
-                        <!-- Form fields here --> <input type="text" id="searchInput" class="input-type-style" placeholder="Kullanıcı adı veya diğer başlıklarla ara...">
+                        <!-- Form fields here --> <input type="text" id="searchInput" class="input-type-style"
+                            placeholder="Kullanıcı adı veya diğer başlıklarla ara...">
                     </form>
                     <!-- Your table content here -->
                     <table id="searchTable" class="table">
@@ -229,24 +230,24 @@
                 <div class="container-fluid pl-4">
                     <div class="pl-4">
                         <div class="d-flex justify-content-between">
-                         <!-- Add the search button and input field inside the <div class="pb-4"> section -->
-<div class="pb-4">
-    <div class="search-btn-container">
-        <button id="searchBtn" class="modal-butons">
-            <i class="fas fa-search"></i> Kullanıcı Ara
-        </button>
-    </div>
-</div>
+                            <!-- Add the search button and input field inside the <div class="pb-4"> section -->
+                            <div class="pb-4">
+                                <div class="search-btn-container">
+                                    <button id="searchBtn" class="modal-butons">
+                                        <i class="fas fa-search"></i> Kullanıcı Ara
+                                    </button>
+                                </div>
+                            </div>
 
 
                             <!-- Add the "Kullanıcı Tanımla" button inside the <div class="pb-4"> section -->
-<div class="pb-4">
-    <div class="user-add-button-container">
-        <button id="myBtn" class="user-add-button">
-            <i class="fas fa-plus"></i> Kullanıcı Tanımla
-        </button>
-    </div>
-</div>
+                            <div class="pb-4">
+                                <div class="user-add-button-container">
+                                    <button id="myBtn" class="user-add-button">
+                                        <i class="fas fa-plus"></i> Kullanıcı Tanımla
+                                    </button>
+                                </div>
+                            </div>
 
                         </div>
                         <div id="myModal" class="modal">
@@ -324,6 +325,40 @@
         </div>
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+    <script>const mysql = require('mysql');
+        const connection = mysql.createConnection({
+            host: 'localhost',     // MySQL sunucusunun adresi (genellikle localhost kullanılır)
+            user: 'kullanici_adi', // MySQL kullanıcı adı
+            password: 'sifre',     // MySQL kullanıcı şifresi
+            database: 'veritabani_adi' // Kullanmak istediğiniz veritabanının adı
+        });
+
+        // MySQL bağlantısını gerçekleştir
+        connection.connect((err) => {
+            if (err) {
+                console.error('MySQL bağlantısı başarısız oldu: ' + err.stack);
+                return;
+            }
+            console.log('MySQL bağlantısı başarıyla gerçekleştirildi. Bağlantı Kimliği: ' + connection.threadId);
+        });
+
+        connection.query('SELECT * FROM tablo_adi', (err, rows) => {
+  if (err) {
+    console.error('Sorgu hatası: ' + err.stack);
+    return;
+  }
+  console.log('Tablo verileri: ', rows);
+});
+
+connection.end((err) => {
+  if (err) {
+    console.error('MySQL bağlantısı kapatılırken hata oluştu: ' + err.stack);
+    return;
+  }
+  console.log('MySQL bağlantısı başarıyla kapatıldı.');
+});
+
+    </script>
     <!-- JavaScript Libraries -->
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
