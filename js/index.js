@@ -1,3 +1,10 @@
+
+  // Function to close the modal
+  function closeModal() {
+    const searchModal = document.getElementById('searchModal');
+    searchModal.style.display = 'none';
+  }
+
 document.addEventListener('DOMContentLoaded', function () {
   var modal = document.getElementById('myModal');
   var btn = document.getElementById('myBtn');
