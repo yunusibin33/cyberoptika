@@ -184,41 +184,16 @@
                 </div>
             </div>
             <div class="ps-4 ms-1">
-        <!-- Kullanıcı Ekleme Formu -->
-<form id="userForm">
-    <label for="name">İsim:</label>
-    <input type="text" id="name" name="name" placeholder="İsim" required />
-  
-    <label for="surname">Soyisim:</label>
-    <input type="text" id="surname" name="surname" placeholder="Soyi43im" required />
-  
-    <!-- Diğer gerekli alanlar eklenecek -->
-  
-    <button type="button" onclick="addUser()">Ekle</button>
-  </form>
-  
-  <!-- Tablo -->
-  <table id="userTable">
-    <thead>
-      <tr>
-        <th>İsim</th>
-        <th>Soyisim</th>
-        <!-- Diğer alanlar -->
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Kullanıcılar burada listelenecek -->
-    </tbody>
-  </table>
-  
                 <div class="container-fluid pl-4">
                     <div class="pl-4">
                         <div class="d-flex justify-content-between">
                             <!-- Add the search button and input field inside the <div class="pb-4"> section -->
                             <div class="pb-4">
                                 <div class="search-btn-container">
-                                    <button id="searchBtn" class="modal-butons"><i class="fas fa-search"></i> Kullanıcı
-                                        Ara</button>
+                                    <button type="button" class="modal-butons" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"><i class="fas fa-search"></i> Kullanıcı
+                            Ara
+                        </button>
                                 </div>
                             </div>
 
@@ -227,6 +202,36 @@
                                 <div class="user-add-button-container">
                                     <button id="myBtn" class="user-add-button"><i class="fas fa-plus"></i> Kullanıcı
                                         Tanımla</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Modal addeduser-->
+                        <!-- Button trigger modal -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-contents">
+                                    <div class="modal-body">
+                                        <div id="aramaFormlari">
+                                            <div class="aramaKutusu">
+                                                <label for="aramaIsim">İsim:</label>
+                                                <input type="text" id="aramaIsim" class="aramaInput" placeholder="İsim ara...">
+                                            </div>
+                                            <div class="aramaKutusu">
+                                                <label for="aramaSoyisim">Soyisim:</label>
+                                                <input type="text" id="aramaSoyisim" class="aramaInput" placeholder="Soyisim ara...">
+                                            </div>
+                                        
+                                            <div class="aramaKutusu">
+                                                <label for="aramaTelefon">Telefon Numarası:</label>
+                                                <input type="text" id="aramaTelefon" class="aramaInput" placeholder="Telefon ara...">
+                                            </div>
+                                        
+                                            <!-- Diğer sütunlar için benzer arama kutuları eklenebilir -->
+                                        </div>
+                                    </div>
+                               
                                 </div>
                             </div>
                         </div>
@@ -307,31 +312,31 @@
 
     <!-- JavaScript Libraries -->
     <script>function addUser() {
-        // Formdaki verileri alın
-        const name = document.getElementById('name').value;
-        const surname = document.getElementById('surname').value;
-        // Diğer gerekli alanları da alın
-      
-        // Form verilerini bir nesne olarak oluşturun
-        const userData = {
-          name: name,
-          surname: surname,
-          // Diğer alanları da ekleyin
-        };
-      
-        // Tabloya kullanıcı ekleyin
-        const tableBody = document.querySelector('#userTable tbody');
-        const newRow = tableBody.insertRow();
-        newRow.innerHTML = `
+            // Formdaki verileri alın
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            // Diğer gerekli alanları da alın
+
+            // Form verilerini bir nesne olarak oluşturun
+            const userData = {
+                name: name,
+                surname: surname,
+                // Diğer alanları da ekleyin
+            };
+
+            // Tabloya kullanıcı ekleyin
+            const tableBody = document.querySelector('#userTable tbody');
+            const newRow = tableBody.insertRow();
+            newRow.innerHTML = `
           <td>${userData.name}</td>
           <td>${userData.surname}</td>
           <!-- Diğer alanları ekleyin -->
         `;
-      
-        // Formu sıfırlayın
-        document.getElementById('userForm').reset();
-      }
-      
+
+            // Formu sıfırlayın
+            document.getElementById('userForm').reset();
+        }
+
     </script>
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
