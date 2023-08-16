@@ -31,101 +31,6 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
 </head>
-<style>
-    .searchmodal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    /* Modal content */
-    .searchmodal-content {
-        background-color: #fff;
-        margin: 4% 25%;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 100%;
-        max-width: 71%;
-    }
-</style>
-<style>
-    .user-info {
-        position: relative;
-        left: 1%;
-        top: -3%;
-        background-color: #aec7ff;
-        padding: 10px;
-        border: 1px solid white;
-        border-radius: 6px;
-        width: 101%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .user-info h2 {
-        margin: 5px 0;
-    }
-
-    .logout-icon {
-        color: red;
-    }
-
-    .profile-icon {
-        color: white;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown a {
-        color: rgb(255, 255, 255);
-    }
-
-    .dropdown-content {
-        margin-top: 1px;
-        display: none;
-        position: absolute;
-        border: 1px solid white;
-        background-color: #aec7ff;
-        border-radius: 6px;
-        width: 101%;
-        z-index: 1;
-        padding: 10px;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .user-info {
-        display: flex;
-        align-items: center;
-    }
-
-    .user-info h6 {
-        margin: 0;
-    }
-
-    .profile-icon {
-        color: white;
-        font-size: 20px;
-    }
-
-    .logout-icon {
-        color: rgb(255, 255, 255);
-        font-size: 20px;
-    }
-</style>
 
 <body>
     <div class="container-fluid position-relative d-flex p-0">
@@ -169,6 +74,7 @@
         </div>
 
         <div class="content">
+
             <!-- Kullanıcı Ekleme Formu -->
 
 
@@ -191,9 +97,9 @@
                             <div class="pb-4">
                                 <div class="search-btn-container">
                                     <button type="button" class="modal-butons" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop"><i class="fas fa-search"></i> Kullanıcı
-                            Ara
-                        </button>
+                                        data-bs-target="#staticBackdrop"><i class="fas fa-search"></i> Kullanıcı
+                                        Ara
+                                    </button>
                                 </div>
                             </div>
 
@@ -206,35 +112,6 @@
                             </div>
                         </div>
                         <!--Modal addeduser-->
-                        <!-- Button trigger modal -->
-                        <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-contents">
-                                    <div class="modal-body">
-                                        <div id="aramaFormlari">
-                                            <div class="aramaKutusu">
-                                                <label for="aramaIsim">İsim:</label>
-                                                <input type="text" id="aramaIsim" class="aramaInput" placeholder="İsim ara...">
-                                            </div>
-                                            <div class="aramaKutusu">
-                                                <label for="aramaSoyisim">Soyisim:</label>
-                                                <input type="text" id="aramaSoyisim" class="aramaInput" placeholder="Soyisim ara...">
-                                            </div>
-                                        
-                                            <div class="aramaKutusu">
-                                                <label for="aramaTelefon">Telefon Numarası:</label>
-                                                <input type="text" id="aramaTelefon" class="aramaInput" placeholder="Telefon ara...">
-                                            </div>
-                                        
-                                            <!-- Diğer sütunlar için benzer arama kutuları eklenebilir -->
-                                        </div>
-                                    </div>
-                               
-                                </div>
-                            </div>
-                        </div>
                         <div id="myModal" class="modal">
                             <div class="modal-content">
                                 <span class="close" onclick="closeModal()">&times;</span>
@@ -306,38 +183,148 @@
                     <!-- Footer End -->
                 </div>
             </div>
+            <div class="container-xl ps-4 ms-1">
+                <button id="addUserButton">Kullanıcı Ekle</button>
+                <div id="userForm" style="display: none;">
+                    <h3>Kullanıcı Bilgilerini Girin</h3>
+                    <label for="name">Ad:</label>
+                    <input type="text" id="name">
+                    <label for="position">Pozisyon:</label>
+                    <input type="text" id="position">
+                    <label for="office">Ofis:</label>
+                    <input type="text" id="office">
+                    <label for="age">Yaş:</label>
+                    <input type="text" id="age">
+                    <label for="startDate">Başlangıç Tarihi:</label>
+                    <input type="text" id="startDate">
+                    <label for="salary">Maaş:</label>
+                    <input type="text" id="salary">
+                    <button id="submitUser">Ekle</button>
+                </div>
+                <table id="example" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%"
+                    role="grid" aria-describedby="example_info" style="width: 100%;">
+
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                aria-label="Name: activate to sort column ascending" style="width: 137px;">Name</th>
+                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                aria-label="Position: activate to sort column ascending" style="width: 215px;">Position
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                aria-label="Office: activate to sort column ascending" style="width: 100px;">Office</th>
+                            <th class="sorting_desc" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                aria-label="Age: activate to sort column ascending" aria-sort="descending"
+                                style="width: 44px;">Age</th>
+                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                aria-label="Start date: activate to sort column ascending" style="width: 93px;">Start
+                                date</th>
+                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                aria-label="Salary: activate to sort column ascending" style="width: 77px;">Salary</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th rowspan="1" colspan="1">Name</th>
+                            <th rowspan="1" colspan="1">Position</th>
+                            <th rowspan="1" colspan="1">Office</th>
+                            <th rowspan="1" colspan="1">Age</th>
+                            <th rowspan="1" colspan="1">Start date</th>
+                            <th rowspan="1" colspan="1">Salary</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+
+
+                        <tr role="row" class="odd">
+                            <td class="">Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td class="sorting_1">66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                        </tr>
+
+
+                        <tr role="row" class="odd">
+                            <td class="">Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td class="sorting_1">63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="">Zenaida Frank</td>
+                            <td>Software Engineer</td>
+                            <td>New York</td>
+                            <td class="sorting_1">63</td>
+                            <td>2010/01/04</td>
+                            <td>$125,250</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="">Vivian Harrell</td>
+                            <td>Financial Controller</td>
+                            <td>San Francisco</td>
+                            <td class="sorting_1">62</td>
+                            <td>2009/02/14</td>
+                            <td>$452,500</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="">Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td class="sorting_1">61</td>
+                            <td>2012/12/02</td>
+                            <td>$372,000</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="">Serge Baldwin</td>
+                            <td>Data Coordinator</td>
+                            <td>Singapore</td>
+                            <td class="sorting_1">64</td>
+                            <td>2012/04/09</td>
+                            <td>$138,575</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="">Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td class="sorting_1">63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="">Zenaida Frank</td>
+                            <td>Software Engineer</td>
+                            <td>New York</td>
+                            <td class="sorting_1">63</td>
+                            <td>2010/01/04</td>
+                            <td>$125,250</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="">Vivian Harrell</td>
+                            <td>Financial Controller</td>
+                            <td>San Francisco</td>
+                            <td class="sorting_1">62</td>
+                            <td>2009/02/14</td>
+                            <td>$452,500</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="">Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td class="sorting_1">61</td>
+                            <td>2012/12/02</td>
+                            <td>$372,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
-    <!-- JavaScript Libraries -->
-    <script>function addUser() {
-            // Formdaki verileri alın
-            const name = document.getElementById('name').value;
-            const surname = document.getElementById('surname').value;
-            // Diğer gerekli alanları da alın
-
-            // Form verilerini bir nesne olarak oluşturun
-            const userData = {
-                name: name,
-                surname: surname,
-                // Diğer alanları da ekleyin
-            };
-
-            // Tabloya kullanıcı ekleyin
-            const tableBody = document.querySelector('#userTable tbody');
-            const newRow = tableBody.insertRow();
-            newRow.innerHTML = `
-          <td>${userData.name}</td>
-          <td>${userData.surname}</td>
-          <!-- Diğer alanları ekleyin -->
-        `;
-
-            // Formu sıfırlayın
-            document.getElementById('userForm').reset();
-        }
-
-    </script>
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
