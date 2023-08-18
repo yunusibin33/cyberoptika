@@ -71,13 +71,13 @@
     width: 288px;
     height: 100vh;
     overflow-y: auto;
-    background: #aec7ff;
+    background: #11bbe1d6;
     transition: 0.5s;
     z-index: 999;
 }
 
 .content {
-    margin-left: 250px;
+    margin-left: 268px;
     min-height: 100vh;
     background-color: #ffffff;
     transition: 0.5s;
@@ -290,7 +290,6 @@
 
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
     background-color: #ffffff;
 }
 
@@ -334,6 +333,8 @@ h1 {
 
 #firmaTable th {
     background-color: #f2f2f2 !important;
+    border: 1px solid #1642a1;
+    font-weight: bold;
 }
 
 #firmaTable tbody tr:nth-child(even) {
@@ -347,7 +348,7 @@ h1 {
 
 #markaTable th,
 #firmaTable td {
-    border: 1px solid #ddd !important;
+    border: 1px solid #a9bbe254 !important;
     padding: 8px !important;
 }
 
@@ -651,21 +652,47 @@ button {
 
 .user-info {
     position: relative;
-    left: 1%;
-    top: -3%;
-    background-color: #aec7ff;
+    left: 0.7%;
+    top: -0.1%;
+    background-color: #11bbe1d6;
     padding: 10px;
     border: 1px solid white;
-    border-radius: 6px;
-    width: 101%;
+    border-radius: 0px 3px 3px 0px;
+    width: 98.7%;
+    margin: 0 auto;
+}
+
+.user-info h2 {
+    margin: 5px 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info h6 {
+    margin: 0;
+}
+
+.user-infos {
+    position: relative;
+    left: 1.2%;
+    top: -3%;
+    background-color: #11bbe1d6;
+    padding: 10px 30px;
+    border: 1px solid white;
+    border-radius: 0px 3px 3px 0px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.user-info h2 {
-    margin: 5px 0;
+.user-infos {
+    display: flex;
+    align-items: center;
 }
 
 .logout-icon {
@@ -701,15 +728,6 @@ button {
     display: block;
 }
 
-.user-info {
-    display: flex;
-    align-items: center;
-}
-
-.user-info h6 {
-    margin: 0;
-}
-
 .profile-icon {
     color: white;
     font-size: 20px;
@@ -734,3 +752,109 @@ button {
   .dt-buttons a:hover .glyphicon {
     visibility: visible;
   }
+
+  @font-face {
+  font-family: Proxima Nova;
+  src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.eot);
+  src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.woff2)
+      format("woff2"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.woff)
+      format("woff"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.ttf)
+      format("truetype"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_1_0.svg#wf)
+      format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Proxima Nova;
+  src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.eot);
+  src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.woff2)
+      format("woff2"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.woff)
+      format("woff"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.ttf)
+      format("truetype"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_4_0.svg#wf)
+      format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Proxima Nova;
+  src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.eot);
+  src: url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.woff2)
+      format("woff2"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.woff)
+      format("woff"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.ttf)
+      format("truetype"),
+    url(https://d25purrcgqtc5w.cloudfront.net/dist/fonts/proximanova/302D42_5_0.svg#wf)
+      format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.search-box {
+  font-size: 20px;
+  border: 1px solid #c1c1c1;
+  background-color: white;
+  border-radius: 10px;
+  transition: 0.2s;
+  height: 37px;
+  margin-top: 10px;
+}
+
+.search-box:hover {
+  border-color: #aaaaaa;
+}
+
+.search-box:focus-within {
+  border-color: #caf3fa;
+  box-shadow: 0 0 0 2px rgba(139, 205, 214, 0.4);
+}
+
+input {
+  font-family: Proxima Nova;
+  letter-spacing: -0.2px;
+  font-size: 20px;
+  border: none;
+  color: #323232;
+  background: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.clear:not(:valid) ~ .search-clear {
+  display: none;
+}
+
+.material-symbols-outlined {
+    line-height: 0 !important;
+}
+
+.thead {
+    height: 20px;
+    border-radius: 5px 5px 0px 0px;
+    background: rgb(73,235,227);
+    background: linear-gradient(90deg, rgba(73,235,227,1) 36%, rgba(22,66,161,1) 73%);
+}
