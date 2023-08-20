@@ -31,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var satis = document.getElementById('satis').value;
     var fiyat = document.getElementById('fiyat').value;
 
+    if (firmaKodu === '' || firmaAdi === '' || ulke === '' || alisPara === '' ||
+    satisPara === '' || iskontoOrani === '' || satis === '' || fiyat === '') {
+    alert('Lütfen tüm alanları doldurun.');
+    return; // Boş alan varsa kaydetmeyi durdur
+}
     if (editRow) {
       // Düzenleme modunda ise, satırı güncelle
       editRow.cells[0].innerHTML = firmaKodu;

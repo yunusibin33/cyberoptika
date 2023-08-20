@@ -185,6 +185,17 @@
 
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+    <script>// Detay butonlarının üzerine gelince buton ismini gösterme
+        document.addEventListener('DOMContentLoaded', function () {
+          var detailButtons = document.getElementsByClassName('detail-btn');
+        
+          for (var i = 0; i < detailButtons.length; i++) {
+            detailButtons[i].title = 'Detaylar'; // Baloncuk metni olarak buton adını ayarla
+          }
+        
+          // ... Diğer kodlar ...
+        });
+        </script>
     <script>
         // İsim girdi alanındaki değişiklikleri dinleyen fonksiyon
         function listenForChanges() {
