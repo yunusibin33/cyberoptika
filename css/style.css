@@ -330,11 +330,16 @@ h1 {
     border: 1px solid #ddd !important;
     padding: 8px !important;
 }
+#firmaTable tr {
+    background-color: #f0f0f0;
+}
 
 #firmaTable th {
-    background-color: #f2f2f2 !important;
+    background-color: #ffffff !important;
     border: 1px solid #1642a1;
     font-weight: bold;
+    color: #1642a1;
+    font-family: revert;
 }
 
 #firmaTable tbody tr:nth-child(even) {
@@ -374,7 +379,7 @@ h1 {
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #f1f1f1;
     margin: 3% 36%;
     padding: 20px;
     width: 80%;
@@ -507,9 +512,11 @@ td button {
 
 .input-type-style {
     border: 1px solid #1642a1;
-    padding: 10px 20px;
+    background-color: #d3e0f1;
+    padding: 5px 20px;
     width: 97%;
     border-radius: 6px;
+    height: 35px;
 }
 
 .modal-butons {
@@ -654,7 +661,8 @@ button {
     position: relative;
     left: 0.7%;
     top: -0.1%;
-    background-color: #11bbe1d6;
+    background: rgb(17,187,225);
+    background: linear-gradient(90deg, rgba(17,187,225,1) 0%, rgba(17,164,225,0.9164040616246498) 100%);
     padding: 10px;
     border: 1px solid white;
     border-radius: 0px 3px 3px 0px;
@@ -679,10 +687,9 @@ button {
     position: relative;
     left: 1.2%;
     top: -3%;
-    background-color: #11bbe1d6;
     padding: 10px 30px;
     border: 1px solid white;
-    border-radius: 0px 3px 3px 0px;
+    border-radius: 3px 3px 3px 3px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -806,8 +813,8 @@ button {
 
 .search-box {
   font-size: 20px;
-  border: 1px solid #c1c1c1;
-  background-color: white;
+  border: 1px solid #0273ff;
+  background-color: #d0e3f3;
   border-radius: 10px;
   transition: 0.2s;
   height: 37px;
@@ -857,4 +864,14 @@ input[type="search"]::-webkit-search-cancel-button {
     border-radius: 5px 5px 0px 0px;
     background: rgb(73,235,227);
     background: linear-gradient(90deg, rgba(73,235,227,1) 36%, rgba(22,66,161,1) 73%);
+}
+
+.form-input-title {
+    font-size: 17px;
+    color: #696969;
+}
+
+.modal-form-title {
+    color: #1642a1 !important;
+    font-family: system-ui;
 }

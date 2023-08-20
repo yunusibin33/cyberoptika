@@ -35,12 +35,7 @@
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
-        <div id="spinner"
-            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
+
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
@@ -98,8 +93,8 @@
                             <!-- Add the "Kullanıcı Tanımla" button inside the <div class="pb-4"> section -->
                             <div class="pb-4">
                                 <div class="user-add-button-container">
-                                    <button id="myBtn" class="user-add-button"><i class="fas fa-plus"></i> Kullanıcı
-                                        Tanımla</button>
+                                    <button id="myBtn" class="user-add-button"><i class="fas fa-plus"></i> Satış Yap
+                                        </button>
                                 </div>
                             </div>
                         </div>
@@ -107,46 +102,54 @@
                         <div id="myModal" class="modal">
                             <div class="modal-content">
                                 <span class="close" onclick="closeModal()">&times;</span>
-                                <h5 class="text-dark text-center pb-5">Kullanıcı Tanımlama Formu</h5>
+                                <h4 class="text-dark text-center pb-2 modal-form-title">Kullanıcı Tanımlama Formu</h5>
                                 <form>
                                     <div class="d-flex">
                                         <div class="form-group col-md-6">
-                                            <label for="firmaKodu">İsim:</label>
+                                            <label class="form-input-title" for="firmaKodu">İsim:</label>
                                             <input type="text" id="firmaKodu" class="input-type-style" required />
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="firmaAdi">Soyisim:</label>
+                                            <label class="form-input-title" for="firmaAdi">Soyisim:</label>
                                             <input type="text" id="firmaAdi" class="input-type-style" required />
                                         </div>
                                     </div>
                                     <div class="d-flex">
                                         <div class="form-group col-md-6">
-                                            <label for="ulke">Telefon Numarası:</label>
-                                            <input type="text" id="ulke" class="input-type-style" required />
+                                            <label class="form-input-title" for="ulke">Telefon Numarası:</label>
+                                            <input type="text" id="ulke" placeholder="+90" class="input-type-style" required />
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="alisPara">Referans:</label>
+                                            <label class="form-input-title" for="alisPara">Referans:</label>
                                             <input type="text" id="alisPara" class="input-type-style" required />
                                         </div>
                                     </div>
                                     <div class="d-flex">
                                         <div class="form-group col-md-6">
-                                            <label for="satisPara">Tarih:</label>
-                                            <input type="text" id="satisPara" class="input-type-style" required />
+                                            <label class="form-input-title" for="satisPara">Tarih:</label>
+                                            <input type="date" id="satisPara" class="input-type-style" required />
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="iskontoOrani">Cam:</label>
-                                            <input type="text" id="iskontoOrani" class="input-type-style" required />
+                                            <select id="iskontoOrani" class="input-type-style" required>
+                                                <option value="Blue">Blue</option>
+                                                <option value="Yeşil Kaplama">Yeşil Kaplama</option>
+                                                <option value="Düz Beyaz Cam">Düz Beyaz Cam</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="d-flex">
                                         <div class="form-group col-md-6">
-                                            <label for="satis">Çerçeve:</label>
-                                            <input type="text" id="satis" class="input-type-style" required />
+                                            <label for="cerceveSecimi">Çerçeve:</label>
+                                            <select id="satis" class="input-type-style" required>
+                                                <option value="latte">Latte</option>
+                                                <option value="rayban">Rayban</option>
+                                                <option value="osse">Osse</option>
+                                            </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="fiyat">Fiyat:</label>
-                                            <input type="text" id="fiyat" class="input-type-style" required />
+                                            <input type="text" placeholder="₺" id="fiyat" class="input-type-style" required />
                                         </div>
                                     </div>
                                     <div class="col-md-12 d-flex justify-content-center pt-4"><button id="submitBtn"
@@ -218,7 +221,7 @@
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    
 </body>
 
 </html>

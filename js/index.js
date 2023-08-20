@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
       cell6.innerHTML = iskontoOrani;
       cell7.innerHTML = satis;
       cell8.innerHTML = fiyat;
-      cell9.innerHTML = '<i class="fas fa-edit edit-btn"></i> <i class="fas fa-trash-alt delete-btn"></i>';
+      cell9.innerHTML = '<i class="fas fa-edit edit-btn"></i> <i class="fas fa-trash-alt delete-btn"></i> <i class="fas fa-info-circle detail-btn"></i> ';
 
       // Verileri localStorage'e kaydet
       saveDataToLocalStorage();
@@ -111,6 +111,14 @@ document.addEventListener('DOMContentLoaded', function () {
       saveDataToLocalStorage();
     }
   });
+
+  // Detay butonu tıklanınca sayfayı yönlendir
+document.addEventListener('click', function (e) {
+  if (e.target && e.target.classList.contains('detail-btn')) {
+    window.location.href = 'details.html'; // Yeni sayfaya yönlendir
+  }
+});
+
 
   // Sayfa yüklendiğinde verileri localStorage'den geri yükle
   loadDataFromLocalStorage();
@@ -169,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
         newRow.insertCell().innerHTML = rowData.iskontoOrani;
         newRow.insertCell().innerHTML = rowData.satis;
         newRow.insertCell().innerHTML = rowData.fiyat;
-        newRow.insertCell().innerHTML = '<i class="fas fa-edit edit-btn"></i> <i class="fas fa-trash-alt delete-btn"></i>';
+        newRow.insertCell().innerHTML = '<i class="fas fa-edit edit-btn"></i> <i class="fas fa-trash-alt delete-btn"></i> <i class="fas fa-info-circle detail-btn"></i>';
       });
     }
   }
