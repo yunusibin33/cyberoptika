@@ -71,7 +71,7 @@
     width: 288px;
     height: 100vh;
     overflow-y: auto;
-    background: #11bbe1d6;
+    background: linear-gradient(230deg, rgb(0 0 0) 0%, rgba(17,164,225,0.9164040616246498) 100%);
     transition: 0.5s;
     z-index: 999;
 }
@@ -130,7 +130,7 @@
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
-    color: #0078a9;
+    color: #75acf3;
     background: #fff;
     border-color: #4344d4;
 }
@@ -147,7 +147,7 @@
 
 .sidebar .navbar .navbar-nav .nav-link:hover i,
 .sidebar .navbar .navbar-nav .nav-link.active i {
-    background: var(--secondary);
+    background: #eeeeee;
 }
 
 .sidebar .navbar .dropdown-toggle::after {
@@ -661,8 +661,7 @@ button {
     position: relative;
     left: 0.7%;
     top: -0.1%;
-    background: rgb(17,187,225);
-    background: linear-gradient(90deg, rgba(17,187,225,1) 0%, rgba(17,164,225,0.9164040616246498) 100%);
+    background: linear-gradient(30deg, rgb(0 0 0) 0%, rgba(17,164,225,0.9164040616246498) 100%);
     padding: 10px;
     border: 1px solid white;
     border-radius: 0px 3px 3px 0px;
@@ -814,7 +813,8 @@ button {
 .search-box {
   font-size: 20px;
   border: 1px solid #0273ff;
-  background-color: #d0e3f3;
+  color: white !important;
+  background: linear-gradient(30deg, rgb(0 0 0) 0%, rgba(17,164,225,0.9164040616246498) 100%);
   border-radius: 10px;
   transition: 0.2s;
   height: 37px;
@@ -835,7 +835,7 @@ input {
   letter-spacing: -0.2px;
   font-size: 20px;
   border: none;
-  color: #323232;
+  color: #ffffff;
   background: none;
 }
 
@@ -862,8 +862,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .thead {
     height: 20px;
     border-radius: 5px 5px 0px 0px;
-    background: rgb(73,235,227);
-    background: linear-gradient(90deg, rgba(73,235,227,1) 36%, rgba(22,66,161,1) 73%);
+    background: linear-gradient(30deg, rgb(0 0 0) 0%, rgba(17,164,225,0.9164040616246498) 100%);
 }
 
 .form-input-title {
