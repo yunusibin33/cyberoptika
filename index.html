@@ -1,197 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Nazar Optik</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="" name="keywords" />
+        <meta content="" name="description" />
 
-<head>
-    <meta charset="utf-8" />
-    <title>Nazar Optik</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon" />
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
-        rel="stylesheet" />
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+        <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
-</head>
+    <body>
+        <div class="container-fluid position-relative d-flex p-0">
+            <!-- Spinner Start -->
 
-<body>
-    <div class="container-fluid position-relative d-flex p-0">
-        <!-- Spinner Start -->
+            <div class="sidebar pe-4 pb-3">
+                <nav class="navbar navbar-dark">
+                    <a href="index.html" class="navbar-brand mx-4 mb-3">
+                        <img
+                            class="ms-4 mt-4"
+                            style="border-radius: 10px !important; border-radius: 10px !important; /* border-left: 1px solid green; */ box-shadow: 0px 0px 9px 4px rgb(155 141 141);"
+                            src="img/Beige Minimalist Simple Initial Logo.png"
+                            width="80%"
+                            alt=""/>
+                    </a>
 
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar navbar-dark">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                 <img class="ms-4 mt-4" style="border-radius: 10px !important; border-left: 1px solid green;" src="img/Beige Minimalist Simple Initial Logo.png" width="200px" alt="">
-                </a>
-
-                <div class="navbar-nav w-100">
-                    <a href="firm-identification.html" class="nav-item nav-link active mb-3"><i
-                            class="fa fa-building me-2"></i>Firma Tanımları</a>
-                    <a href="brand-definitions.html" class="nav-item nav-link active mb-3"> <i
-                            class="fa fa-tags me-2"></i>Marka Tanımları </a>
-                    <a href="index.html" class="nav-item nav-link active"><i
-                            class="fa fa-users me-2"></i>Kullanıcılar</a>
-                    <a href="product-stock.html" class="nav-item nav-link active mt-3"><i
-                            class="fa fa-box me-2"></i>Ürün Stoğu</a>
-                    <a href="https://optik.sgk.gov.tr/Optik_Firma_Web/login.jsp"
-                        class="nav-item nav-link active mt-3"><i class="fa fa-sign-in-alt me-2"></i>Medula Giriş</a>
-                </div>
-            </nav>
-        </div>
-
-        <div class="content">
-            <!--modals-->
-            <div id="openModal-about" class="modalDialog">
-                <div>
-                    <a href="#closed" title="Closed" class="closed">X</a>
-                    <p>
-                    <div class="container-modal">
-                        <h1 class="modal-form-title mb-4">Fiyat İndirim Hesaplama Formu</h1>
-                        <form id="discountForm">
-                            <label for="originalPrice" class="form-label">Orijinal Fiyat:</label>
-                            <input type="number" id="originalPrice" name="originalPrice" class="form-input" required>
-
-                            <label for="discountPercentage" class="form-label">İndirim Oranı (%):</label>
-                            <input type="number" id="discountPercentage" name="discountPercentage" class="form-input"
-                                required>
-
-                            <button type="button" id="calculateButton" class="calculate-button">Hesapla</button>
-
-                            <p id="discountedPrice" class="discounted-price">Sonuç : </p>
-                        </form>
+                    <div class="navbar-nav w-100">
+                        <a href="firm-identification.html" class="nav-item nav-link active mb-3"><i class="fa fa-building me-2"></i>Firma Tanımları</a>
+                        <a href="brand-definitions.html" class="nav-item nav-link active mb-3"> <i class="fa fa-tags me-2"></i>Marka Tanımları </a>
+                        <a href="index.html" class="nav-item nav-link active"><i class="fa fa-users me-2"></i>Kullanıcılar</a>
+                        <a href="product-stock.html" class="nav-item nav-link active mt-3"><i class="fa fa-box me-2"></i>Ürün Stoğu</a>
+                        <a href="https://optik.sgk.gov.tr/Optik_Firma_Web/login.jsp" class="nav-item nav-link active mt-3"><i class="fa fa-sign-in-alt me-2"></i>Medula Giriş</a>
                     </div>
-                    </p>
-                </div>
+                </nav>
             </div>
-            <div id="openModal-calculator" class="modalDialog">
-                <div>
-                    <a href="#closed" title="Closed" class="closed">X</a>
-                    <p>
-                    <div class="d-flex justify-content-center">
-                        <div class="calculator">
-                            <input type="text" id="display" disabled>
-                            <div class="buttons-calc">
-                                <button class="buttons-calcs" onclick="appendToDisplay('7')">7</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('8')">8</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('9')">9</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('+')">+</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('4')">4</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('5')">5</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('6')">6</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('-')">-</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('1')">1</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('2')">2</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('3')">3</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('*')">*</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('0')">0</button>
-                                <button class="buttons-calcs" onclick="calculate()">=</button>
-                                <button class="buttons-calcs" onclick="clearDisplay()">C</button>
-                                <button class="buttons-calcs" onclick="appendToDisplay('/')">/</button>
+
+            <div class="content">
+                <!--modals-->
+                <div id="openModal-about" class="modalDialog">
+                    <div>
+                        <a href="#closed" title="Closed" class="closed">X</a>
+                        <p></p>
+                        <div class="container-modal col-12">
+                            <h4 class="modal-form-title mb-4 text-center">İskonto Hesaplama Formu</h4>
+                            <form id="discountForm">
+                                <div class="col-12">
+                                    <label for="originalPrice" class="form-label">Orijinal Fiyat:</label>
+                                    <input type="number" id="originalPrice" name="originalPrice" class="form-input" required />
+                                </div>
+                                <div class="col-12">
+                                    <label for="discountPercentage" class="form-label">İndirim Oranı (%):</label>
+                                    <input type="number" id="discountPercentage" name="discountPercentage" class="form-input" required />
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="calculateButton" class="calculate-button">Hesapla</button>
+                                </div>
+                                <p id="discountedPrice" class="discounted-price pt-3">Sonuç :</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="openModal-calculator" class="modalDialog">
+                    <div>
+                        <a href="#closed" title="Closed" class="closed">X</a>
+                        <p></p>
+                        <div class="d-flex justify-content-center">
+                            <div class="calculator">
+                                <input type="text" placeholder="0" id="display" disabled />
+                                <div class="buttons-calc">
+                                    <button class="buttons-calcs" onclick="appendToDisplay('7')">7</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('8')">8</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('9')">9</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('+')">+</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('4')">4</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('5')">5</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('6')">6</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('-')">-</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('1')">1</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('2')">2</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('3')">3</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('*')">*</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('0')">0</button>
+                                    <button class="buttons-calcs" onclick="calculate()">=</button>
+                                    <button class="buttons-calcs" onclick="clearDisplay()">C</button>
+                                    <button class="buttons-calcs" onclick="appendToDisplay('/')">/</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    </p>
                 </div>
-            </div>
-
-            <div class="user-info d-flex justify-content-between">
-                <div class="ps-4">
-                    <button id="percentageButton" onclick="calculateDiscountedPrice()">
-                    <a href="#openModal-about"><i class="fas fa-percent pe-3"></i>İskonto Hesapla</a>
-                    </button>
-                    <button id="percentageButton" onclick="calculateDiscountedPrice()">
-                        <a href="#openModal-calculator"><i class="fas fa-calculator pe-3"></i>Hesap Makinesi</a>
-                    </button>
-                </div>
-                <div class="dropdown">
-                    <div class="user-infos">
-                        <i class="fas fa-user-circle profile-icon"></i>
-                        <h6 class="ps-2">Yunus İbin</h6>
-                    </div>
-                    <div class="dropdown-content">
-                        <a href="signin.html">Çıkış Yap <i class="fas fa-sign-out-alt logout-icon ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="ps-4 ms-1 mt-4">
-                <div class="content-back-color">
-                    <div class="container-fluid pl-4">
-                        <div class="pl-4">
-                            <div class="d-flex justify-content-between">
-                                <!-- Add the search button and input field inside the <div class="pb-4"> section -->
-                                <div class="pb-4">
-                                    <link rel="stylesheet"
-                                        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
-                                    <form class="search-box">
-                                        <button style="background: none; border: none; padding: 0"><span
-                                                style="font-size: 30px; vertical-align: -1px; color: #0c1db3"
-                                                class="material-symbols-outlined">search</span></button>
-                                        <input style="vertical-align: 8px; width: 205px; color: #ffffff;" type="search"
-                                            name="focus" placeholder="İsim arayınız..." id="searchInput" value="">
-                                    </form>
+                <div id="openModal-products" class="modalDialog">
+                    <div>
+                        <a href="#closed" title="Closed" class="closed">X</a>
+                        <p></p>
+                        <div class="d-flex justify-content-center">
+                            <div class="calculator">
+                                <h4 class="modal-form-title mb-4 text-center">Ürün Fiyat Hesaplama</h4>
+                                <div class="form-group col-md-12">
+                                    <label for="iskontoOrani">Çerçeve:</label>
+                                    <select id="iskontoOrani" class="input-type-style" required>
+                                        <option value="Blue">Latte</option>
+                                        <option value="Yeşil Kaplama">Osse</option>
+                                        <option value="Düz Beyaz Cam">Rayban</option>
+                                    </select>
                                 </div>
-
-                                <!-- Add the "Kullanıcı Tanımla" button inside the <div class="pb-4"> section -->
-                                <div class="pb-4">
-                                    <div class="user-add-button-container">
-                                        <button id="myBtn" class="user-add-button"><i class="fas fa-plus"></i> Satış Yap
-                                        </button>
-                                    </div>
+                                <div class="form-group col-md-12">
+                                    <label for="iskontoOrani">Cam:</label>
+                                    <select id="iskontoOrani" class="input-type-style" required>
+                                        <option value="Blue">Blue</option>
+                                        <option value="Yeşil Kaplama">Yeşil Kaplama</option>
+                                        <option value="Düz Beyaz Cam">Düz Beyaz Cam</option>
+                                    </select>
                                 </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" class="calculate-button">Hesapla</button>
+                                </div>
+                                <p class="mt-4">Sonuç :</p>
                             </div>
-                            <!--Modal addeduser-->
-                            <div id="myModal" class="modal">
-                                <div class="modal-content">
-                                    <span class="close" onclick="closeModal()">&times;</span>
-                                    <h4 class="text-dark text-center pb-2 modal-form-title">Kullanıcı Satış Formu</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-info d-flex justify-content-between">
+                    <div class="ps-4">
+                        <button id="percentageButton" onclick="calculateDiscountedPrice()">
+                            <a href="#openModal-about"><i class="fas fa-percent pe-2"></i>İskonto Hesapla</a>
+                        </button>
+                        <button id="percentageButton" onclick="calculateDiscountedPrice()">
+                            <a href="#openModal-calculator"><i class="fas fa-calculator pe-2"></i>Hesap Makinesi</a>
+                        </button>
+                        <button id="percentageButton" onclick="calculateDiscountedPrice()">
+                            <a href="#openModal-products"><i class="fas fa-money-bill pe-2"></i> Ürün Fiyat Hesaplama</a>
+                        </button>
+                    </div>
+                    <div class="dropdown">
+                        <div class="user-infos">
+                            <i class="fas fa-user-circle profile-icon"></i>
+                            <h6 class="ps-2">Yunus İbin</h6>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="signin.html">Çıkış Yap <i class="fas fa-sign-out-alt logout-icon ps-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ps-4 ms-1 mt-4">
+                    <div class="content-back-color">
+                        <div class="container-fluid pl-4">
+                            <div class="pl-4">
+                                <div class="d-flex justify-content-between">
+                                    <!-- Add the search button and input field inside the <div class="pb-4"> section -->
+                                    <div class="pb-4">
+                                        <div class="user-add-button-container">
+                                            <button id="myBtn" class="user-add-button"><i class="fas fa-plus"></i> Satış Yap</button>
+                                        </div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+                                        <form class="search-box">
+                                            <button style="background: none; border: none; padding: 0;"><span style="font-size: 30px; vertical-align: -1px; color: #0c1db3;" class="material-symbols-outlined">search</span></button>
+                                            <input style="vertical-align: 8px; width: 205px; color: #ffffff;" type="search" name="focus" placeholder="İsim arayınız..." id="searchInput" value="" />
+                                        </form>
+                                    </div>
+
+                                    <!-- Add the "Kullanıcı Tanımla" button inside the <div class="pb-4"> section -->
+                                </div>
+                                <!--Modal addeduser-->
+                                <div id="myModal" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close" onclick="closeModal()">&times;</span>
+                                        <h4 class="text-dark text-center pb-2 modal-form-title">Kullanıcı Satış Formu</h4>
                                         <form>
                                             <div class="d-flex">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-input-title" for="firmaKodu">İsim:</label>
-                                                    <input type="text" placeholder="İsim" id="firmaKodu"
-                                                        class="input-type-style" required />
+                                                    <input type="text" placeholder="İsim" id="firmaKodu" class="input-type-style" required />
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-input-title" for="firmaAdi">Soyisim:</label>
-                                                    <input type="text" placeholder="Soyisim" id="firmaAdi"
-                                                        class="input-type-style" required />
+                                                    <input type="text" placeholder="Soyisim" id="firmaAdi" class="input-type-style" required />
                                                 </div>
                                             </div>
                                             <div class="d-flex">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-input-title" for="ulke">Telefon Numarası:</label>
-                                                    <input type="text" id="ulke" placeholder="+90"
-                                                        class="input-type-style" required />
+                                                    <input type="text" id="ulke" placeholder="+90" class="input-type-style" required />
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-input-title" for="alisPara">Referans:</label>
-                                                    <input type="text" id="alisPara" placeholder="Referans"
-                                                        class="input-type-style" required />
+                                                    <input type="text" id="alisPara" placeholder="Referans" class="input-type-style" required />
                                                 </div>
                                             </div>
                                             <div class="d-flex">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-input-title" for="satisPara">Tarih:</label>
-                                                    <input type="date" id="satisPara" class="input-type-style"
-                                                        required />
+                                                    <input type="date" id="satisPara" class="input-type-style" required />
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="iskontoOrani">Cam:</label>
@@ -213,119 +235,115 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="fiyat">Fiyat:</label>
-                                                    <input type="text" placeholder="₺" id="fiyat"
-                                                        class="input-type-style" required />
+                                                    <input type="text" placeholder="₺" id="fiyat" class="input-type-style" required />
                                                 </div>
                                             </div>
                                             <button id="copyButton" style="display: none;">Kopyala</button>
-                                            <div class="col-md-12 d-flex justify-content-center pt-4"><button
-                                                    id="submitBtn" class="modal-butons">Kaydet</button></div>
+                                            <div class="col-md-12 d-flex justify-content-center pt-4"><button id="submitBtn" class="modal-butons">Kaydet</button></div>
                                         </form>
+                                    </div>
                                 </div>
+                                <div class="thead"></div>
+                                <table id="firmaTable" class="table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>İsim</th>
+                                            <th>Soyisim</th>
+                                            <th>Telefon Numarası</th>
+                                            <th>Referans</th>
+                                            <th>Tarih</th>
+                                            <th>Cam</th>
+                                            <th>Çerçeve</th>
+                                            <th>Fiyat</th>
+                                            <th>İşlemler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
                             </div>
-                            <div class="thead"></div>
-                            <table id="firmaTable" class="table-responsive">
-                                <thead>
-                                    <tr>
-                                        <th>İsim</th>
-                                        <th>Soyisim</th>
-                                        <th>Telefon Numarası</th>
-                                        <th>Referans</th>
-                                        <th>Tarih</th>
-                                        <th>Cam</th>
-                                        <th>Çerçeve</th>
-                                        <th>Fiyat</th>
-                                        <th>İşlemler</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                            <!-- Footer End -->
                         </div>
-                        <!-- Footer End -->
                     </div>
                 </div>
+                <div class="container-xl"></div>
             </div>
-            <div class="container-xl">
 
-            </div>
+            <a href="#" class="btn btn-lg btn-success btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
         </div>
+        <script>
+            let displayValue = "";
 
-        <a href="#" class="btn btn-lg btn-success btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
-    <script>let displayValue = "";
-
-        function appendToDisplay(value) {
-            displayValue += value;
-            document.getElementById("display").value = displayValue;
-        }
-
-        function calculate() {
-            try {
-                displayValue = eval(displayValue);
+            function appendToDisplay(value) {
+                displayValue += value;
                 document.getElementById("display").value = displayValue;
-            } catch (error) {
-                document.getElementById("display").value = "Error";
             }
-        }
 
-        function clearDisplay() {
-            displayValue = "";
-            document.getElementById("display").value = "";
-        }
-    </script>
-    <script>document.addEventListener('DOMContentLoaded', function () {
-            const calculateButton = document.getElementById('calculateButton');
-            const originalPriceInput = document.getElementById('originalPrice');
-            const discountPercentageInput = document.getElementById('discountPercentage');
-            const discountedPriceParagraph = document.getElementById('discountedPrice');
+            function calculate() {
+                try {
+                    displayValue = eval(displayValue);
+                    document.getElementById("display").value = displayValue;
+                } catch (error) {
+                    document.getElementById("display").value = "Error";
+                }
+            }
 
-            calculateButton.addEventListener('click', function () {
-                const originalPrice = parseFloat(originalPriceInput.value);
-                const discountPercentage = parseFloat(discountPercentageInput.value);
-                const discountAmount = (originalPrice * discountPercentage) / 100;
-                const discountedPrice = originalPrice - discountAmount;
+            function clearDisplay() {
+                displayValue = "";
+                document.getElementById("display").value = "";
+            }
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const calculateButton = document.getElementById("calculateButton");
+                const originalPriceInput = document.getElementById("originalPrice");
+                const discountPercentageInput = document.getElementById("discountPercentage");
+                const discountedPriceParagraph = document.getElementById("discountedPrice");
 
-                discountedPriceParagraph.textContent = `İndirimli Fiyat: ${discountedPrice.toFixed(2)} TL`;
+                calculateButton.addEventListener("click", function () {
+                    const originalPrice = parseFloat(originalPriceInput.value);
+                    const discountPercentage = parseFloat(discountPercentageInput.value);
+                    const discountAmount = (originalPrice * discountPercentage) / 100;
+                    const discountedPrice = originalPrice - discountAmount;
+
+                    discountedPriceParagraph.textContent = `İndirimli Fiyat: ${discountedPrice.toFixed(2)} TL`;
+                });
             });
-        });
-    </script>
-    <script>
-        // İsim girdi alanındaki değişiklikleri dinleyen fonksiyon
-        function listenForChanges() {
-            var input = document.getElementById("searchInput");
-            input.addEventListener("input", function () {
-                searchUser();
-            });
-        }
+        </script>
+        <script>
+            // İsim girdi alanındaki değişiklikleri dinleyen fonksiyon
+            function listenForChanges() {
+                var input = document.getElementById("searchInput");
+                input.addEventListener("input", function () {
+                    searchUser();
+                });
+            }
 
-        function searchUser() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("firmaTable");
-            tr = table.getElementsByTagName("tr");
+            function searchUser() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("searchInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("firmaTable");
+                tr = table.getElementsByTagName("tr");
 
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0]; // İsim sütunu
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0]; // İsim sütunu
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
                     }
                 }
             }
-        }
 
-        // Sayfa yüklendiğinde dinleme işlemi başlatılıyor
-        window.onload = listenForChanges;
-    </script>
+            // Sayfa yüklendiğinde dinleme işlemi başlatılıyor
+            window.onload = listenForChanges;
+        </script>
 
-    <script src="js/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
+        <script src="js/index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>

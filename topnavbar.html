@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Nazar Optik</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+
+
+
+
+    <div class="user-info d-flex justify-content-between">
+        <div class="ps-4">
+            <button id="percentageButton" onclick="calculateDiscountedPrice()">
+                <a href="#openModal-about"><i class="fas fa-percent pe-2"></i>İskonto Hesapla</a>
+            </button>
+            <button id="percentageButton" onclick="calculateDiscountedPrice()">
+                <a href="#openModal-calculator"><i class="fas fa-calculator pe-2"></i>Hesap Makinesi</a>
+            </button>
+            <button id="percentageButton" onclick="calculateDiscountedPrice()">
+                <a href="#openModal-products"><i class="fas fa-money-bill pe-2"></i>
+                    Ürün Fiyat Hesaplama</a>
+            </button>
+        </div>
+        <div class="dropdown">
+            <div class="user-infos">
+                <i class="fas fa-user-circle profile-icon"></i>
+                <h6 class="ps-2">Yunus İbin</h6>
+            </div>
+            <div class="dropdown-content">
+                <a href="signin.html">Çıkış Yap <i class="fas fa-sign-out-alt logout-icon ps-2"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!--modals-->
+    <div id="openModal-about" class="modalDialog">
+        <div>
+            <a href="#closed" title="Closed" class="closed">X</a>
+            <p>
+            <div class="container-modal col-12">
+                <h4 class="modal-form-title mb-4 text-center">İskonto Hesaplama Formu</h1>
+                    <form id="discountForm">
+                        <div class="col-12">
+                            <label for="originalPrice" class="form-label">Orijinal Fiyat:</label>
+                            <input type="number" id="originalPrice" name="originalPrice" class="form-input" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="discountPercentage" class="form-label">İndirim Oranı (%):</label>
+                            <input type="number" id="discountPercentage" name="discountPercentage" class="form-input"
+                                required>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" id="calculateButton" class="calculate-button">Hesapla</button>
+                        </div>
+                        <p id="discountedPrice" class="discounted-price pt-3">Sonuç : </p>
+                    </form>
+            </div>
+            </p>
+        </div>
+    </div>
+    <div id="openModal-calculator" class="modalDialog">
+        <div>
+            <a href="#closed" title="Closed" class="closed">X</a>
+            <p>
+            <div class="d-flex justify-content-center">
+                <div class="calculator">
+                    <input type="text" placeholder="0" id="display" disabled>
+                    <div class="buttons-calc">
+                        <button class="buttons-calcs" onclick="appendToDisplay('7')">7</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('8')">8</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('9')">9</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('+')">+</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('4')">4</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('5')">5</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('6')">6</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('-')">-</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('1')">1</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('2')">2</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('3')">3</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('*')">*</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('0')">0</button>
+                        <button class="buttons-calcs" onclick="calculate()">=</button>
+                        <button class="buttons-calcs" onclick="clearDisplay()">C</button>
+                        <button class="buttons-calcs" onclick="appendToDisplay('/')">/</button>
+                    </div>
+                </div>
+            </div>
+            </p>
+        </div>
+    </div>
+    <div id="openModal-products" class="modalDialog">
+        <div>
+            <a href="#closed" title="Closed" class="closed">X</a>
+            <p>
+            <div class="d-flex justify-content-center">
+                <div class="calculator">
+                    <h4 class="modal-form-title mb-4 text-center">Ürün Fiyat Hesaplama</h4>
+                    <div class="form-group col-md-12">
+                        <label for="iskontoOrani">Çerçeve:</label>
+                        <select id="iskontoOrani" class="input-type-style" required>
+                            <option value="Blue">Latte</option>
+                            <option value="Yeşil Kaplama">Osse</option>
+                            <option value="Düz Beyaz Cam">Rayban</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="iskontoOrani">Cam:</label>
+                        <select id="iskontoOrani" class="input-type-style" required>
+                            <option value="Blue">Blue</option>
+                            <option value="Yeşil Kaplama">Yeşil Kaplama</option>
+                            <option value="Düz Beyaz Cam">Düz Beyaz Cam</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="calculate-button">Hesapla</button>
+                    </div>
+                    <p class="mt-4">Sonuç :</p>
+                </div>
+            </div>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
