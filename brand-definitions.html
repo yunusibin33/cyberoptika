@@ -110,12 +110,16 @@
               <div id="myModal" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
-                  <h3>Marka Tanımlama Formu</h3>
+                  <h4 class="text-dark text-center pb-2 modal-form-title">Marka Tanımlama Formu</h4>
                   <form>
                     <div class="d-flex">
                     <div class="col-md-6 form-group">
-                      <label for="markaKodu">Marka Kodu:</label>
-                      <input type="text" id="markaKodu" class="input-type-style" required>
+                      <label for="Firma">Firma</label>
+                      <select id="markaKodu" class="input-type-style" required>
+                          <option value="Blue">A firması</option>
+                          <option value="Yeşil Kaplama">b firması</option>
+                          <option value="Düz Beyaz Cam">c firması</option>
+                      </select>
                     </div>
                     <div class="col-md-6 form-group">
                       <label for="markaAdi">Marka Adı:</label>
@@ -140,8 +144,8 @@
                     </div>
             
                     <div class="col-md-6 form-group">
-                      <label for="iskontoOrani">İskonto Oranı:</label>
-                      <input type="text" id="iskontoOrani" class="input-type-style" required>
+                      <label for="iskontoran">İskonto Oranı:</label>
+                      <input type="text" id="iskontoran" class="input-type-style" required>
                     </div>
                   </div>
                   <div class="col-md-12 d-flex justify-content-center pt-4"> 
@@ -154,7 +158,7 @@
               <table id="markaTable" class="table">
                 <thead>
                   <tr>
-                    <th>Marka Kodu</th>
+                    <th>Firma</th>
                     <th>Marka Adı</th>
                     <th>Ülke</th>
                     <th>Alış Para</th>
@@ -208,7 +212,7 @@
           var ulke = document.getElementById('ulke').value;
           var alisPara = document.getElementById('alisPara').value;
           var satisPara = document.getElementById('satisPara').value;
-          var iskontoOrani = document.getElementById('iskontoOrani').value;
+          var iskontoran = document.getElementById('iskontoran').value;
   
           if (editRow) {
             // Düzenleme modunda ise, satırı güncelle
@@ -217,7 +221,7 @@
             editRow.cells[2].innerHTML = ulke;
             editRow.cells[3].innerHTML = alisPara;
             editRow.cells[4].innerHTML = satisPara;
-            editRow.cells[5].innerHTML = iskontoOrani;
+            editRow.cells[5].innerHTML = iskontoran;
           } else {
             // Yeni marka ekleniyor
             var table = document.getElementById('markaTable');
@@ -234,7 +238,7 @@
             cell3.innerHTML = ulke;
             cell4.innerHTML = alisPara;
             cell5.innerHTML = satisPara;
-            cell6.innerHTML = iskontoOrani;
+            cell6.innerHTML = iskontoran;
             cell7.innerHTML = '<i class="fas fa-edit edit-btn"></i> <i class="fas fa-trash-alt delete-btn"></i>';
           }
   
@@ -252,7 +256,7 @@
             var ulke = cells[2].innerHTML;
             var alisPara = cells[3].innerHTML;
             var satisPara = cells[4].innerHTML;
-            var iskontoOrani = cells[5].innerHTML;
+            var iskontoran = cells[5].innerHTML;
   
             // Formu doldur
             document.getElementById('markaKodu').value = markaKodu;
@@ -260,7 +264,7 @@
             document.getElementById('ulke').value = ulke;
             document.getElementById('alisPara').value = alisPara;
             document.getElementById('satisPara').value = satisPara;
-            document.getElementById('iskontoOrani').value = iskontoOrani;
+            document.getElementById('iskontoran').value = iskontoran;
   
             editRow = row; // Düzenleme yapılacak satırın referansını kaydet
   
@@ -284,7 +288,7 @@
           document.getElementById('ulke').value = '';
           document.getElementById('alisPara').value = '';
           document.getElementById('satisPara').value = '';
-          document.getElementById('iskontoOrani').value = '';
+          document.getElementById('iskontoran').value = '';
         }
       });
     </script>
