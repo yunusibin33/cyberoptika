@@ -81,94 +81,94 @@
   <div class="container-fluid position-relative d-flex p-0">
     <div class="sidebar pe-4 pb-3">
       <nav class="navbar navbar-dark">
-          <a href="index.html" class="navbar-brand mx-4 mb-3">
-           <img class="ms-4 mt-4" style="border-radius: 10px !important; border-left: 1px solid green;" src="img/Beige Minimalist Simple Initial Logo.png" width="80%" alt="">
-          </a>
+        <a href="index.html" class="navbar-brand mx-4 mb-3">
+          <img class="ms-4 mt-4" style="border-radius: 10px !important; border-left: 1px solid green;"
+            src="img/Beige Minimalist Simple Initial Logo.png" width="80%" alt="">
+        </a>
 
-          <div class="navbar-nav w-100">
-              <a href="firm-identification.html" class="nav-item nav-link active mb-3"><i
-                      class="fa fa-building me-2"></i>Firma Tanımları</a>
-              <a href="brand-definitions.html" class="nav-item nav-link active mb-3"> <i
-                      class="fa fa-tags me-2"></i>Marka Tanımları </a>
-              <a href="index.html" class="nav-item nav-link active"><i
-                      class="fa fa-users me-2"></i>Kullanıcılar</a>
-              <a href="product-stock.html" class="nav-item nav-link active mt-3"><i
-                      class="fa fa-box me-2"></i>Ürün Stoğu</a>
-              <a href="https://optik.sgk.gov.tr/Optik_Firma_Web/login.jsp"
-                  class="nav-item nav-link active mt-3"><i class="fa fa-sign-in-alt me-2"></i>Medula Giriş</a>
-          </div>
+        <div class="navbar-nav w-100">
+          <a href="firm-identification.html" class="nav-item nav-link active mb-3"><i
+              class="fa fa-building me-2"></i>Firma Tanımları</a>
+          <a href="brand-definitions.html" class="nav-item nav-link active mb-3"> <i class="fa fa-tags me-2"></i>Marka
+            Tanımları </a>
+          <a href="index.html" class="nav-item nav-link active"><i class="fa fa-users me-2"></i>Kullanıcılar</a>
+          <a href="product-stock.html" class="nav-item nav-link active mt-3"><i class="fa fa-box me-2"></i>Ürün
+            Stoğu</a>
+          <a href="https://optik.sgk.gov.tr/Optik_Firma_Web/login.jsp" class="nav-item nav-link active mt-3"><i
+              class="fa fa-sign-in-alt me-2"></i>Medula Giriş</a>
+        </div>
       </nav>
-  </div>
+    </div>
     <div class="content">
       <div id="includedContent"></div>
-    <div class="content-background-color">
-      <div class="container-fluid">
-        <div>
-          <button id="myBtn" class="btn btn-primary mb-4">Ürün Ekle</button>
+      <div class="content-background-color">
+        <div class="container-fluid">
+          <div>
+            <button id="myBtn" class="btn btn-primary mb-4">Ürün Ekle</button>
 
-          <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <h3>Ürün Bilgileri</h3>
-              <form>
-                <div class="d-flex">
-                <div class="form-group col-md-6">
-                  <label for="barkod">Barkod:</label>
-                  <input type="number" id="barkod" class="input-type-style" required>
-                </div>
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Ürün Bilgileri</h3>
+                <form>
+                  <div class="d-flex">
+                    <div class="form-group col-md-6">
+                      <label for="barkod">Barkod:</label>
+                      <input type="number" id="barkod" class="input-type-style" required>
+                    </div>
 
-                <div class="form-group col-md-6">
-                  <label for="urunAdi">Ürün Adı:</label>
-                  <input type="text" id="urunAdi" class="input-type-style" required>
-                </div>
-              </div>
-              <div class="d-flex">
-                <div class="form-group col-md-6">
-                  <label for="gelenFiyat">Geliş Fiyatı:</label>
-                  <input type="number" id="gelenFiyat" class="input-type-style" required>
-                </div>
+                    <div class="form-group col-md-6">
+                      <label for="urunAdi">Ürün Adı:</label>
+                      <input type="text" id="urunAdi" class="input-type-style" required>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <div class="form-group col-md-6">
+                      <label for="gelenFiyat">Geliş Fiyatı:</label>
+                      <input type="number" id="gelenFiyat" class="input-type-style" required>
+                    </div>
 
-                <div class="form-group col-md-6">
-                  <label for="satisFiyat">Satış Fiyatı:</label>
-                  <input type="number" id="satisFiyat" class="input-type-style" required>
-                </div>
+                    <div class="form-group col-md-6">
+                      <label for="satisFiyat">Satış Fiyatı:</label>
+                      <input type="number" id="satisFiyat" class="input-type-style" required>
+                    </div>
+                  </div>
+                  <div class="form-group col-12">
+                    <label for="stokAdedi">Stok Adedi:</label>
+                    <input type="number" id="stokAdedi" class="input-type-style" required>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <button type="button" id="submitBtn" class="btn btn-success">Kaydet</button>
+                  </div>
+                </form>
               </div>
-                <div class="form-group col-12">
-                  <label for="stokAdedi">Stok Adedi:</label>
-                  <input type="number" id="stokAdedi" class="input-type-style" required>
-                </div>
-<div class="d-flex justify-content-center">
-                <button type="button" id="submitBtn" class="btn btn-success">Kaydet</button>
-              </div>
-              </form>
             </div>
-          </div>
 
-          <table id="stokTable" class="table">
-            <thead>
-              <tr>
-                <th>Barkod</th>
-                <th>Ürün Adı</th>
-                <th>Geliş Fiyatı</th>
-                <th>Satış Fiyatı</th>
-                <th>Stok Adedi</th>
-                <th>İşlemler</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-            <tfoot>
-              <tr>
-                <th colspan="4">Toplam Stok Adedi:</th>
-                <th class="total-stok"></th>
-                <th></th>
-              </tr>
-            </tfoot>
-          </table>
+            <table id="stokTable" class="table">
+              <thead>
+                <tr>
+                  <th>Barkod</th>
+                  <th>Ürün Adı</th>
+                  <th>Geliş Fiyatı</th>
+                  <th>Satış Fiyatı</th>
+                  <th>Stok Adedi</th>
+                  <th>İşlemler</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">Toplam Stok Adedi:</td>
+                  <td class="total-stok"></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- Footer End -->
         </div>
-        <!-- Footer End -->
       </div>
-    </div>
     </div>
     <!-- Content End -->
 
@@ -179,139 +179,139 @@
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var modal = document.getElementById('myModal');
-    var btn = document.getElementById('myBtn');
-    var span = document.getElementsByClassName('close')[0];
-    var submitBtn = document.getElementById('submitBtn');
-    var editRow = null; // Düzenleme yapılacak satırın referansını tutar
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('myModal');
+      var btn = document.getElementById('myBtn');
+      var span = document.getElementsByClassName('close')[0];
+      var submitBtn = document.getElementById('submitBtn');
+      var editRow = null; // Düzenleme yapılacak satırın referansını tutar
 
-    btn.onclick = function () {
-      modal.style.display = 'block';
-    }
-
-    span.onclick = function () {
-      modal.style.display = 'none';
-      resetForm(); // Formu sıfırla
-    }
-
-    submitBtn.onclick = function () {
-      var barkod = document.getElementById('barkod').value;
-      var urunAdi = document.getElementById('urunAdi').value;
-      var gelenFiyat = document.getElementById('gelenFiyat').value;
-      var satisFiyat = document.getElementById('satisFiyat').value;
-      var stokAdedi = document.getElementById('stokAdedi').value;
-
-      if (editRow) {
-        // Düzenleme modunda ise, satırı güncelle
-        editRow.cells[0].innerHTML = barkod;
-        editRow.cells[1].innerHTML = urunAdi;
-        editRow.cells[2].innerHTML = gelenFiyat;
-        editRow.cells[3].innerHTML = satisFiyat;
-        editRow.cells[4].innerHTML = stokAdedi;
-      } else {
-        // Yeni ürün ekleniyor
-        var table = document.getElementById('stokTable');
-        var newRow = table.insertRow(table.rows.length - 1); // Son sıradaki toplam satırını önce ekle
-        var cell1 = newRow.insertCell(0);
-        var cell2 = newRow.insertCell(1);
-        var cell3 = newRow.insertCell(2);
-        var cell4 = newRow.insertCell(3);
-        var cell5 = newRow.insertCell(4);
-        var cell6 = newRow.insertCell(5);
-        cell1.innerHTML = barkod;
-        cell2.innerHTML = urunAdi;
-        cell3.innerHTML = gelenFiyat;
-        cell4.innerHTML = satisFiyat;
-        cell5.innerHTML = stokAdedi;
-        cell6.innerHTML = '<i class="fas fa-edit edit-btn"></i> <i class="fas fa-trash-alt delete-btn"></i>';
-      }
-
-      modal.style.display = 'none';
-      resetForm(); // Formu sıfırla
-      calculateTotalStok();
-      saveToLocalStorage(); // Save data to Local Storage after each change
-    }
-
-    // Add event listeners for edit and delete buttons
-    document.addEventListener('click', function (e) {
-      if (e.target && e.target.classList.contains('edit-btn')) {
-        var row = e.target.parentNode.parentNode;
-        var cells = row.getElementsByTagName('td');
-        var barkod = cells[0].innerHTML;
-        var urunAdi = cells[1].innerHTML;
-        var gelenFiyat = cells[2].innerHTML;
-        var satisFiyat = cells[3].innerHTML;
-        var stokAdedi = cells[4].innerHTML;
-
-        // Formu doldur
-        document.getElementById('barkod').value = barkod;
-        document.getElementById('urunAdi').value = urunAdi;
-        document.getElementById('gelenFiyat').value = gelenFiyat;
-        document.getElementById('satisFiyat').value = satisFiyat;
-        document.getElementById('stokAdedi').value = stokAdedi;
-
-        editRow = row; // Düzenleme yapılacak satırın referansını kaydet
-
+      btn.onclick = function () {
         modal.style.display = 'block';
-      } else if (e.target && e.target.classList.contains('delete-btn')) {
-        var row = e.target.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-        calculateTotalStok();
-        saveToLocalStorage(); // Update Local Storage after deletion
       }
-    });
 
-    function resetForm() {
-      editRow = null;
-      document.getElementById('barkod').value = '';
-      document.getElementById('urunAdi').value = '';
-      document.getElementById('gelenFiyat').value = '';
-      document.getElementById('satisFiyat').value = '';
-      document.getElementById('stokAdedi').value = '';
-    }
+      span.onclick = function () {
+        modal.style.display = 'none';
+        resetForm(); // Formu sıfırla
+      }
 
-    function calculateTotalStok() {
-      var table = document.getElementById('stokTable');
-      var totalStok = 0;
+      submitBtn.onclick = function () {
+        var barkod = document.getElementById('barkod').value;
+        var urunAdi = document.getElementById('urunAdi').value;
+        var gelenFiyat = document.getElementById('gelenFiyat').value;
+        var satisFiyat = document.getElementById('satisFiyat').value;
+        var stokAdedi = document.getElementById('stokAdedi').value;
 
-      for (var i = 1; i < table.rows.length - 1; i++) { // Toplam satırı hariç, başlık ve son satırı sayma
-        var row = table.rows[i];
-        var stokAdedi = parseInt(row.cells[4].innerHTML);
-        if (!isNaN(stokAdedi)) {
-          totalStok += stokAdedi;
+        if (editRow) {
+          // Düzenleme modunda ise, satırı güncelle
+          editRow.cells[0].innerHTML = barkod;
+          editRow.cells[1].innerHTML = urunAdi;
+          editRow.cells[2].innerHTML = gelenFiyat;
+          editRow.cells[3].innerHTML = satisFiyat;
+          editRow.cells[4].innerHTML = stokAdedi;
+        } else {
+          // Yeni ürün ekleniyor
+          var table = document.getElementById('stokTable');
+          var newRow = table.insertRow(table.rows.length - 1); // Son sıradaki toplam satırını önce ekle
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+          var cell4 = newRow.insertCell(3);
+          var cell5 = newRow.insertCell(4);
+          var cell6 = newRow.insertCell(5);
+          cell1.innerHTML = barkod;
+          cell2.innerHTML = urunAdi;
+          cell3.innerHTML = gelenFiyat;
+          cell4.innerHTML = satisFiyat;
+          cell5.innerHTML = stokAdedi;
+          cell6.innerHTML = '<i class="fas fa-edit edit-btn"></i> <i class="fas fa-trash-alt delete-btn"></i>';
         }
+
+        modal.style.display = 'none';
+        resetForm(); // Formu sıfırla
+        calculateTotalStok();
+        saveToLocalStorage(); // Save data to Local Storage after each change
       }
 
-      var totalRow = table.rows[table.rows.length - 1];
-      var totalCell = totalRow.cells[4];
-      totalCell.innerHTML = '<span class="total-stok">' + totalStok + '</span>';
-    }
+      // Add event listeners for edit and delete buttons
+      document.addEventListener('click', function (e) {
+        if (e.target && e.target.classList.contains('edit-btn')) {
+          var row = e.target.parentNode.parentNode;
+          var cells = row.getElementsByTagName('td');
+          var barkod = cells[0].innerHTML;
+          var urunAdi = cells[1].innerHTML;
+          var gelenFiyat = cells[2].innerHTML;
+          var satisFiyat = cells[3].innerHTML;
+          var stokAdedi = cells[4].innerHTML;
 
-    function saveToLocalStorage() {
-      var tableData = [];
-      var table = document.getElementById('stokTable');
+          // Formu doldur
+          document.getElementById('barkod').value = barkod;
+          document.getElementById('urunAdi').value = urunAdi;
+          document.getElementById('gelenFiyat').value = gelenFiyat;
+          document.getElementById('satisFiyat').value = satisFiyat;
+          document.getElementById('stokAdedi').value = stokAdedi;
 
-      for (var i = 1; i < table.rows.length - 1; i++) {
-        var row = table.rows[i];
-        var rowData = {
-          barkod: row.cells[0].innerHTML,
-          urunAdi: row.cells[1].innerHTML,
-          gelenFiyat: row.cells[2].innerHTML,
-          satisFiyat: row.cells[3].innerHTML,
-          stokAdedi: row.cells[4].innerHTML,
-        };
-        tableData.push(rowData);
+          editRow = row; // Düzenleme yapılacak satırın referansını kaydet
+
+          modal.style.display = 'block';
+        } else if (e.target && e.target.classList.contains('delete-btn')) {
+          var row = e.target.parentNode.parentNode;
+          row.parentNode.removeChild(row);
+          calculateTotalStok();
+          saveToLocalStorage(); // Update Local Storage after deletion
+        }
+      });
+
+      function resetForm() {
+        editRow = null;
+        document.getElementById('barkod').value = '';
+        document.getElementById('urunAdi').value = '';
+        document.getElementById('gelenFiyat').value = '';
+        document.getElementById('satisFiyat').value = '';
+        document.getElementById('stokAdedi').value = '';
       }
 
-      localStorage.setItem('tableData', JSON.stringify(tableData));
-    }
-
-    function loadFromLocalStorage() {
-      var tableData = localStorage.getItem('tableData');
-      if (tableData) {
-        tableData = JSON.parse(tableData);
+      function calculateTotalStok() {
         var table = document.getElementById('stokTable');
+        var totalStok = 0;
+
+        for (var i = 1; i < table.rows.length - 1; i++) { // Toplam satırı hariç, başlık ve son satırı sayma
+          var row = table.rows[i];
+          var stokAdedi = parseInt(row.cells[4].innerHTML);
+          if (!isNaN(stokAdedi)) {
+            totalStok += stokAdedi;
+          }
+        }
+
+        var totalRow = table.rows[table.rows.length - 1];
+        var totalCell = totalRow.cells[4];
+        totalCell.innerHTML = '<span class="total-stok">' + totalStok + '</span>';
+      }
+
+      function saveToLocalStorage() {
+        var tableData = [];
+        var table = document.getElementById('stokTable');
+
+        for (var i = 1; i < table.rows.length - 1; i++) {
+          var row = table.rows[i];
+          var rowData = {
+            barkod: row.cells[0].innerHTML,
+            urunAdi: row.cells[1].innerHTML,
+            gelenFiyat: row.cells[2].innerHTML,
+            satisFiyat: row.cells[3].innerHTML,
+            stokAdedi: row.cells[4].innerHTML,
+          };
+          tableData.push(rowData);
+        }
+
+        localStorage.setItem('tableData', JSON.stringify(tableData));
+      }
+
+      function loadFromLocalStorage() {
+        var tableData = localStorage.getItem('tableData');
+        if (tableData) {
+          tableData = JSON.parse(tableData);
+          var table = document.getElementById('stokTable');
 
           tableData.forEach(function (rowData) {
             var newRow = table.insertRow(table.rows.length - 1);
